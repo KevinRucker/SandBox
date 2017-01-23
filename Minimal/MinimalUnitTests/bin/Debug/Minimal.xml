@@ -1,0 +1,2529 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Minimal</name>
+    </assembly>
+    <members>
+        <member name="T:Minimal.Configuration.ConfigManager">
+            <summary>
+            Manage access to configuration settings
+            </summary>
+        </member>
+        <member name="M:Minimal.Configuration.ConfigManager.AppSetting``1(System.String)">
+            <summary>
+            Get AppSetting value
+            </summary>
+            <typeparam name="T">Return Type</typeparam>
+            <param name="key">Setting key</param>
+            <returns>Value of Type T</returns>
+        </member>
+        <member name="M:Minimal.Configuration.ConfigManager.AppSetting``1(System.String,System.Boolean)">
+            <summary>
+            Get AppSetting value
+            </summary>
+            <typeparam name="T">Return Type</typeparam>
+            <param name="key">Setting key</param>
+            <param name="encrypted"><c>true</c> if value must be decrypted; otherwise <c>false</c></param>
+            <returns>Value of Type T</returns>
+        </member>
+        <member name="M:Minimal.Configuration.ConfigManager.ConfigValue``1(System.String)">
+            <summary>
+            Get configuration value
+            </summary>
+            <typeparam name="T">Type of return value</typeparam>
+            <param name="key">Name of configutaion item</param>
+            <returns>Value</returns>
+        </member>
+        <member name="T:Minimal.Configuration.ConfigSection">
+            <summary>
+            Represents a section of the configuration file
+            </summary>
+        </member>
+        <member name="M:Minimal.Configuration.ConfigSection.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Public constructor
+            </summary>
+            <param name="section">The configuration section (passed by <see cref="T:System.Configuration.ConfigurationManager"/>)</param>
+        </member>
+        <member name="P:Minimal.Configuration.ConfigSection.SectionData">
+            <summary>
+            Direct access to configuration data
+            </summary>
+        </member>
+        <member name="P:Minimal.Configuration.ConfigSection.Item(System.String)">
+            <summary>
+            Indexer
+            </summary>
+            <param name="index">Name of individual item in configuration section</param>
+            <returns>Value of individual item in configuration section</returns>
+        </member>
+        <member name="M:Minimal.Configuration.ConfigSection.ParseSection(System.Xml.Linq.XElement)">
+            <summary>
+            Parse configuration section
+            </summary>
+            <param name="section"><see cref="T:System.Xml.Linq.XElement"/> containing section to parse</param>
+        </member>
+        <member name="T:Minimal.Configuration.ConfigSectionHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Minimal.Configuration.ConfigSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Create a <see cref="T:Minimal.Configuration.ConfigSection"/> parsed from the passed Xml fragment. This object is created by the .Net Framework.
+            </summary>
+            <param name="parent"></param>
+            <param name="configContext"></param>
+            <param name="section"></param>
+            <returns>object</returns>
+        </member>
+        <member name="T:Minimal.Framework.BaseClasses.PersistentEntityBase">
+            <summary>
+            Base class for persistent entities
+            </summary>
+        </member>
+        <member name="P:Minimal.Framework.BaseClasses.PersistentEntityBase.Id">
+            <summary>
+            Entity Id
+            </summary>
+        </member>
+        <member name="P:Minimal.Framework.BaseClasses.PersistentEntityBase.IsChanged">
+            <summary>
+            Has entity changed
+            </summary>
+            <returns><c>true</c> if entity has been changed since instanciation; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Minimal.Framework.BaseClasses.PersistentEntityBase.Load(System.Data.IDataRecord)">
+            <summary>
+            Populate TEntity from data in <see cref="T:System.Data.IDataRecord"/>
+            </summary>
+            <param name="record">The data record to load</param>
+        </member>
+        <member name="T:Minimal.Framework.BaseClasses.DaoBase`1">
+            <summary>
+            Base class for Data Access Objects (DAO)
+            </summary>
+            <typeparam name="TEntity">Type of entity used by DAO</typeparam>
+        </member>
+        <member name="M:Minimal.Framework.BaseClasses.DaoBase`1.Fetch(System.Int32)">
+            <summary>
+            Fetch entity by Id
+            </summary>
+            <param name="ID">The Id</param>
+            <returns>TEntity instance</returns>
+        </member>
+        <member name="M:Minimal.Framework.BaseClasses.DaoBase`1.FetchList(System.Object)">
+            <summary>
+            Fetch filtered List of TEntity
+            </summary>
+            <param name="filter">Filter used to obtain list</param>
+            <returns>List of TEntity instances</returns>
+        </member>
+        <member name="M:Minimal.Framework.BaseClasses.DaoBase`1.FetchAll">
+            <summary>
+            Fetch unfiltered List of TEntity
+            </summary>
+            <returns>List of TEntity instances</returns>
+        </member>
+        <member name="M:Minimal.Framework.BaseClasses.DaoBase`1.Save(`0)">
+            <summary>
+            Save (Insert/Update) TEntity
+            </summary>
+            <param name="entity">The entity to save</param>
+            <returns>TEntity instance</returns>
+        </member>
+        <member name="M:Minimal.Framework.BaseClasses.DaoBase`1.Delete(`0)">
+            <summary>
+            Delete TEntity
+            </summary>
+            <param name="entity">The entity to delete</param>
+        </member>
+        <member name="T:Minimal.Framework.Interfaces.IDaoBase`1">
+            <summary>
+            Base interface for Data Access Objects (DAO)
+            </summary>
+            <typeparam name="TEntity">Type of entity used by DAO</typeparam>
+        </member>
+        <member name="M:Minimal.Framework.Interfaces.IDaoBase`1.Fetch(System.Int32)">
+            <summary>
+            Fetch entity by Id
+            </summary>
+            <param name="ID">The Id</param>
+            <returns>TEntity instance</returns>
+        </member>
+        <member name="M:Minimal.Framework.Interfaces.IDaoBase`1.FetchList(System.Object)">
+            <summary>
+            Fetch filtered List of TEntity
+            </summary>
+            <param name="filter">Filter used to obtain list</param>
+            <returns>List of TEntity instances</returns>
+        </member>
+        <member name="M:Minimal.Framework.Interfaces.IDaoBase`1.FetchAll">
+            <summary>
+            Fetch unfiltered List of TEntity
+            </summary>
+            <returns>List of TEntity instances</returns>
+        </member>
+        <member name="M:Minimal.Framework.Interfaces.IDaoBase`1.Save(`0)">
+            <summary>
+            Save (Insert/Update) TEntity
+            </summary>
+            <param name="entity">The entity to save</param>
+            <returns>TEntity instance</returns>
+        </member>
+        <member name="M:Minimal.Framework.Interfaces.IDaoBase`1.Delete(`0)">
+            <summary>
+            Delete TEntity
+            </summary>
+            <param name="entity">The entity to delete</param>
+        </member>
+        <member name="T:Minimal.Interfaces.IConfigSection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IConfigSection.SectionData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IConfigSection.Item(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Minimal.Interfaces.IBinaryHeader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.IBinaryHeader.AddEntry(Minimal.Interfaces.IHeaderEntry)">
+            <summary>
+            
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.IBinaryHeader.AddEntry(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:Minimal.Interfaces.IBinaryHeader.Size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IBinaryHeader.EntryCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IBinaryHeader.Item(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IBinaryHeader.HeaderBytes">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Minimal.Interfaces.IBitMask">
+            <summary>
+            The interface for BitMap class implementations
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IBitMask.BaseValue">
+            <summary>
+            The base value of the bitmap
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.IBitMask.GetBitValue(System.Int32)">
+            <summary>
+            Get the value of the bit at the supplied position position in the bitmask
+            </summary>
+            <param name="bitPosition"></param>
+            <returns><code>true</code> if the bit is on and <code>false</code> if it is off</returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IBitMask.SetBit(System.Int32)">
+            <summary>
+            Turn on bit at the supplied position in the bitmask
+            </summary>
+            <param name="bitPosition"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.IBitMask.ClearBit(System.Int32)">
+            <summary>
+            Turn off bit at the supplied position in the bitmask
+            </summary>
+            <param name="bitPosition"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.IBitMask.SetAll">
+            <summary>
+            Turn on all bits in the bitmask
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.IBitMask.ClearAll">
+            <summary>
+            Turn off all bits in the bitmask
+            </summary>
+        </member>
+        <member name="T:Minimal.Interfaces.IDataContainer">
+            <summary>
+            Interface for DataContainer implementation
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IDataContainer.Header">
+            <summary>
+            <see cref="T:Minimal.Interfaces.IBinaryHeader"/>
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IDataContainer.Data">
+            <summary>
+            <c>byte[]</c> containing the data
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.IDataContainer.GetBytes">
+            <summary>
+            Gets <c>byte[]</c> containing the <see cref="!:BinaryHeader"/> bytes and data bytes
+            </summary>
+            <returns><c>byte[]</c> containing the <see cref="!:BinaryHeader"/> bytes and data bytes</returns>
+        </member>
+        <member name="T:Minimal.Interfaces.IHeaderEntry">
+            <summary>
+            Interface definition for objects of type of <see cref="T:Minimal.Common.HeaderEntry"/>
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IHeaderEntry.EntryType">
+            <summary>
+            The <code>Type</code> of the entry's value
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IHeaderEntry.EntrySize">
+            <summary>
+            The size in bytes of the entry's value
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IHeaderEntry.EntryBytes">
+            <summary>
+            <code>byte[]</code> containing the entry
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IHeaderEntry.EntryName">
+            <summary>
+            The entry's name
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IHeaderEntry.EntryValue">
+            <summary>
+            The entry's value
+            </summary>
+        </member>
+        <member name="T:Minimal.Interfaces.ISMTP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.ISMTP.SMTPServer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.ISMTP.From">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.ISMTP.AttachmentCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.ISMTP.Port">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.ISMTP.useEmailRelay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.To(System.Net.Mail.MailAddress)">
+            <summary>
+            
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.CC(System.Net.Mail.MailAddress)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.BCC(System.Net.Mail.MailAddress)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.Priority(System.Net.Mail.MailPriority)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.Subject(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.Body(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.isBodyHtml(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.Encoding(System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.addAttachment(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="FileSpec"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.addAttachment(System.IO.Stream,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="thisStream"></param>
+            <param name="Name"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.addAttachment(System.IO.Stream,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="thisStream"></param>
+            <param name="Name"></param>
+            <param name="ContentType"></param>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.clearAttachments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.ISMTP.Send">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Minimal.Interfaces.ICompressionProvider">
+            <summary>
+            Interface for CompressionProvider implementations
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.ICompressionProvider.CompressString(System.String)">
+            <summary>
+            Compress a <code>string</code> value
+            </summary>
+            <param name="value"><code>string</code> to compress</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.ICompressionProvider.CompressString(System.String,System.Text.Encoding)">
+            <summary>
+            Compress a <code>string</code> value
+            </summary>
+            <param name="value"><code>string</code> to compress</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert string to byte[]. Pass null to use standard encoding (UTF8).</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.ICompressionProvider.DecompressString(System.Byte[])">
+            <summary>
+            Decompress a <code>byte[]</code>
+            </summary>
+            <param name="value">The <code>byte[]</code> to decompress.</param>
+            <returns><code>string</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.ICompressionProvider.DecompressString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Decompress a <code>byte[]</code>
+            </summary>
+            <param name="value">The <code>byte[]</code> to decompress.</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert byte[] to string. Pass null to use standard encoding (UTF8).</param>
+            <returns><code>string</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.ICompressionProvider.CompressBytes(System.Byte[])">
+            <summary>
+            Compress <code>byte[]</code>
+            </summary>
+            <param name="value"><code>byte[]</code> to compress</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.ICompressionProvider.DecompressBytes(System.Byte[])">
+            <summary>
+            Decompress <code>byte[]</code>
+            </summary>
+            <param name="value"><code>byte[]</code> to decompress</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="T:Minimal.Interfaces.IDBConnectionStringProvider">
+            <summary>
+            Interface for classes implementing ConnectionString provider functionality
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBConnectionStringProvider.GetConnectionString">
+            <summary>
+            Retrieve the ConnectionString
+            </summary>
+            <returns><code>System.String</code> The retrieved ConnectionString</returns>
+        </member>
+        <member name="T:Minimal.Interfaces.IDBContext">
+            <summary>
+            Interface for classes implementing DBContext
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.CreateConnection">
+            <summary>
+            Create a database connection
+            </summary>
+            <returns><code>System.Data.IDbConnection</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.CreateCommand(System.Data.IDbConnection)">
+            <summary>
+            Create a database command object
+            </summary>
+            <param name="connection"><code>System.Data.IDbConnection</code> to use</param>
+            <returns><code>System.Data.IDbCommand</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.CreateCommand(System.String,System.Data.CommandType,System.Data.IDbConnection)">
+            <summary>
+            Create a database command object
+            </summary>
+            <param name="commandText"><code>System.String</code> containing the command text to execute.</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="connection"><code>System.Data.IDbConnection</code> to use</param>
+            <returns><code>System.Data.IDbCommand</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.CreateParameter(System.Data.DbType,System.Data.ParameterDirection,System.String,System.Object)">
+            <summary>
+            Create Parameter
+            </summary>
+            <param name="type"></param>
+            <param name="direction"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.CreateParameter(System.Data.DbType,System.Data.ParameterDirection,System.String,System.Nullable{System.Byte},System.Nullable{System.Byte},System.Nullable{System.Int32},System.String,System.Data.DataRowVersion,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="direction"></param>
+            <param name="name"></param>
+            <param name="precision"></param>
+            <param name="scale"></param>
+            <param name="size"></param>
+            <param name="sourceColumn"></param>
+            <param name="version"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.AddParameterList(System.Data.IDbCommand@,System.Collections.Generic.IList{System.Data.IDbDataParameter})">
+            <summary>
+            Add a list of <code>System.Data.IDbParameter</code> to the <code>System.Data.IDbCommand</code>
+            </summary>
+            <param name="command"><code>System.Data.IDbCommand</code> to use</param>
+            <param name="parameters"><code>System.Collections.Generic.IList&lt;System.Data.IDbParameter&gt;</code> to add</param>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.CreateAdapter(System.Data.IDbCommand)">
+            <summary>
+            Create a DataAdapter
+            </summary>
+            <param name="command"><code>System.Data.IDbCommand</code> to use</param>
+            <returns><code>System.Data.IDbDataAdapter</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IDBContext.CreateDataReader(System.Data.IDbCommand)">
+            <summary>
+            Create a DataReader
+            </summary>
+            <param name="command"><code>System.Data.IDbCommand</code> to use</param>
+            <returns><code>System.Data,IDataReader</code></returns>
+        </member>
+        <member name="T:Minimal.Interfaces.IEncryptionProvider">
+            <summary>
+            Interface for EncryptionProvider implementations
+            </summary>
+        </member>
+        <member name="P:Minimal.Interfaces.IEncryptionProvider.IsNISTCertifiedAlgorithm">
+            <summary>
+            Returns <c>true</c> if encryption algorithm is certified by NIST as FIPS 140-2 compliant; otherwise <c>false</c>
+            </summary>
+        </member>
+        <member name="M:Minimal.Interfaces.IEncryptionProvider.EncryptString(System.String,System.String)">
+            <summary>
+            Encrypts a <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.String</code> value to encrypt</param>
+            <returns>base64 encoded encrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IEncryptionProvider.EncryptString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Encrypts a <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.String</code> value to encrypt</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert string to byte[]. Pass null to use standard encoding (UTF8).</param>
+            <returns>base64 encoded encrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IEncryptionProvider.DecryptString(System.String,System.String)">
+            <summary>
+            Decrypts an encrypted, base64 encoded <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value">base64 encoded, encrypted <code>System.String</code> to decrypt</param>
+            <returns>Decrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IEncryptionProvider.DecryptString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Decrypts an encrypted, base64 encoded <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value">base64 encoded, encrypted <code>System.String</code> to decrypt</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert byte[] to string. Pass null to use standard encoding (UTF8).</param>
+            <returns>Decrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IEncryptionProvider.EncryptBytes(System.String,System.Byte[])">
+            <summary>
+            Encrypts a <code>System.byte[]</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.byte[]</code> data to encrypt</param>
+            <returns>Encrypted <code>System.byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Interfaces.IEncryptionProvider.DecryptBytes(System.String,System.Byte[])">
+            <summary>
+            Decrypts an encrypted <code>System.byte[]</code>
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.byte[]</code> data to decrypt</param>
+            <returns>Decrypted <code>System.byte[]</code></returns>
+        </member>
+        <member name="T:Minimal.Common.DataContainer">
+            <summary>
+            Container for binary data including <see cref="T:Minimal.Common.BinaryHeader"/>.
+            </summary>
+        </member>
+        <member name="M:Minimal.Common.DataContainer.#ctor">
+            <summary>
+            Private default constructor
+            </summary>
+        </member>
+        <member name="M:Minimal.Common.DataContainer.Factory">
+            <summary>
+            Factory method
+            </summary>
+            <returns>Empty <see cref="T:Minimal.Common.DataContainer"/></returns>
+        </member>
+        <member name="M:Minimal.Common.DataContainer.Factory(System.Byte[],System.Collections.Generic.IList{Minimal.Interfaces.IHeaderEntry})">
+            <summary>
+            Factory method, constructs DataContainer from data and <see cref="T:Minimal.Common.BinaryHeader"/>.
+            </summary>
+            <param name="data">Binary data</param>
+            <param name="headerdef"><see cref="T:Minimal.Common.BinaryHeader"/> definition.</param>
+            <returns>DataContainer containing provided <see cref="T:Minimal.Common.BinaryHeader"/> and data.</returns>
+        </member>
+        <member name="P:Minimal.Common.DataContainer.Header">
+            <summary>
+            <see cref="T:Minimal.Common.BinaryHeader"/>
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.DataContainer.Data">
+            <summary>
+            Binary data
+            </summary>
+        </member>
+        <member name="M:Minimal.Common.DataContainer.GetBytes">
+            <summary>
+            Returns binary representation of <see cref="T:Minimal.Common.DataContainer"/>
+            </summary>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="T:Minimal.Common.Factory">
+            <summary>
+            Library object factory
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.Factory.CreateBuffer">
+            <summary>
+            Create a buffer (array of bytes)
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.Factory.BytesToBase64">
+            <summary>
+            Convert byte[] to base64 string
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.Factory.Base64ToBytes">
+            <summary>
+            convert base64 string to byte[]
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.Factory.EncodeBytes">
+            <summary>
+            Encode byte[] into string using passed Encoding
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.Factory.DecodeString">
+            <summary>
+            Decode string to byte[] using passed Encoding
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.Factory.GetStandardEncoder">
+            <summary>
+            Gets standard encoder (UTF8)
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.Factory.IsWebApp">
+            <summary>
+            <c>true</c> if appllication is a web application; otherwise <c>false</c>.
+            </summary>
+        </member>
+        <member name="T:Minimal.Common.NativeMethods">
+            <summary>
+            Wrapper class for native Microsoft Windows(tm) API calls (PInvoke)
+            </summary>
+            <remarks>
+            Required .Net Framework references:
+            None
+            
+            Required 3rd Party Assemblies:
+            None
+            </remarks>
+        </member>
+        <member name="T:Minimal.Common.NativeMethods.TokenInformationClass">
+            <summary>
+            Passed to <see cref="M:Minimal.Common.NativeMethods.GetTokenInformation(System.IntPtr,Minimal.Common.NativeMethods.TokenInformationClass,System.IntPtr,System.Int32,System.Int32@)"/> to specify what
+            information about the token to return.
+            </summary>
+        </member>
+        <member name="T:Minimal.Common.NativeMethods.TokenElevationType">
+            <summary>
+            The elevation type for a user token.
+            </summary>
+        </member>
+        <member name="T:Minimal.Common.DataProviders">
+            <summary>
+            Supported data providers
+            </summary>
+            <remarks>
+            DISCLAIMER: Third party Data Providers must be installed and configured correctly to work.
+            </remarks>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.Odbc">
+            <summary>
+            Microsoft(tm) Odbc (JET) Provider
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.OleDb">
+            <summary>
+            Microsoft(tm) OleDb Provider
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.OracleClient">
+            <summary>
+            Microsoft(tm) Oracle Provider (Depreciated after .Net Framework 3.5)
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.ODPManaged">
+            <summary>
+            Oracle(tm) Data Provider for .NET (Managed - requires ODAC 12c Release 2)
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.ODPUnmanaged">
+            <summary>
+            Oracle(tm) Data Provider for .NET (Unmanaged)
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.FireBird">
+            <summary>
+            FireBird Data Provider
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.PostgreSQL">
+            <summary>
+            Data Provider for PostgreSQL
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.MySQL">
+            <summary>
+            MySQL Data Provider
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.DataProviders.SqlServer">
+            <summary>
+            Microsoft (tm) SQL Server Provider
+            </summary>
+        </member>
+        <member name="T:Minimal.Common.HTTPVerbs">
+            <summary>
+            Enumeration of HTTP verbs
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.CONNECT">
+            <summary>
+            The CONNECT method can be used with a proxy that can dynamically switch to tunneling, as in the case of SSL tunneling. See page 57 of RFC 2616.
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.DELETE">
+            <summary>
+            The DELETE method requests that a specified URI be deleted. See page 56 of RFC 2616.
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.GET">
+            <summary>
+            The GET method retrieves the information or entity that is identified by the URI of the Request. See page 53 of RFC 2616.
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.HEAD">
+            <summary>
+            The HEAD method is identical to GET except that the server only returns message-headers in the response, without a message-body. See page 54 of RFC 2616
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.OPTIONS">
+            <summary>
+            The OPTIONS method requests information about the communication options and requirements associated with a URI. See page 52 of RFC 2616.
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.POST">
+            <summary>
+            The POST method is used to post a new entity as an addition to a URI. The URI identifies an entity that consumes the posted data in some fashion. See page 54 of RFC 2616.
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.PUT">
+            <summary>
+            The PUT method is used to replace an entity identified by a URI. See page 55 of RFC 2616.
+            </summary>
+        </member>
+        <member name="F:Minimal.Common.HTTPVerbs.TRACE">
+            <summary>
+            The TRACE method invokes a remote, application-layer loop-back of the request message. See page 56 of RFC 2616.
+            </summary>
+        </member>
+        <member name="T:Minimal.Common.BinaryHeader">
+            <summary>
+            Binary Header implementation
+            </summary>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.#ctor">
+            <summary>
+            Private Constructor
+            </summary>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.#ctor(System.Collections.Generic.IList{Minimal.Interfaces.IHeaderEntry})">
+            <summary>
+            Private Constructor
+            </summary>
+            <param name="entryGraph">Graph of objects which implement <see cref="T:Minimal.Interfaces.IHeaderEntry"/></param>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.#ctor(System.Byte[],System.Collections.Generic.IList{Minimal.Interfaces.IHeaderEntry})">
+            <summary>
+            Private Constructor
+            </summary>
+            <param name="bytes"><code>byte[]</code> containing a <see cref="T:Minimal.Common.BinaryHeader"/></param>
+            <param name="entryGraph">Graph of objects which implement <see cref="T:Minimal.Interfaces.IHeaderEntry"/></param>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.Factory">
+            <summary>
+            Object factory method
+            </summary>
+            <returns><code>BinaryHeader</code> instance</returns>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.Factory(System.Collections.Generic.IList{Minimal.Interfaces.IHeaderEntry})">
+            <summary>
+            Object factory method
+            </summary>
+            <param name="entryGraph">Graph of objects which implement <see cref="T:Minimal.Interfaces.IHeaderEntry"/></param>
+            <returns><code>BinaryHeader</code> instance</returns>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.Factory(System.Byte[],System.Collections.Generic.IList{Minimal.Interfaces.IHeaderEntry})">
+            <summary>
+            Object factory method
+            </summary>
+            <param name="bytes"><code>byte[]</code> containing a <see cref="T:Minimal.Common.BinaryHeader"/></param>
+            <param name="entryGraph">Graph of objects which implement <see cref="T:Minimal.Interfaces.IHeaderEntry"/></param>
+            <returns><code>BinaryHeader</code> instance</returns>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.AddEntry(Minimal.Interfaces.IHeaderEntry)">
+            <summary>
+            Add <see cref="T:Minimal.Common.HeaderEntry"/> to graph
+            </summary>
+            <param name="entry">Object which implements <see cref="T:Minimal.Interfaces.IHeaderEntry"/></param>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.AddEntry(System.String,System.Object)">
+            <summary>
+            Add <see cref="T:Minimal.Common.HeaderEntry"/> to graph
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:Minimal.Common.BinaryHeader.Size">
+            <summary>
+            Size property
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.BinaryHeader.EntryCount">
+            <summary>
+            Entry count property
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.BinaryHeader.Item(System.String)">
+            <summary>
+            Indexer
+            </summary>
+            <param name="name"><code>string</code> containing name of desired <see cref="T:Minimal.Common.HeaderEntry"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Common.BinaryHeader.HeaderBytes">
+            <summary>
+            Get <see cref="T:Minimal.Common.BinaryHeader"/> as an array of bytes
+            </summary>
+            <returns><see cref="T:Minimal.Common.BinaryHeader"/> as an array of bytes</returns>
+        </member>
+        <member name="T:Minimal.Common.HeaderEntry">
+            <summary>
+            Concrete implementation of <see cref="T:Minimal.Common.HeaderEntry"/>
+            </summary>
+        </member>
+        <member name="M:Minimal.Common.HeaderEntry.#ctor">
+            <summary>
+            Private default constructor
+            </summary>
+        </member>
+        <member name="M:Minimal.Common.HeaderEntry.#ctor(System.String,System.Object)">
+            <summary>
+            Private constructor
+            </summary>
+            <param name="name">Name of header entry</param>
+            <param name="value">Value of header entry</param>
+        </member>
+        <member name="M:Minimal.Common.HeaderEntry.Factory">
+            <summary>
+            Factory method
+            </summary>
+            <returns><see cref="T:Minimal.Common.HeaderEntry"/> instance</returns>
+        </member>
+        <member name="M:Minimal.Common.HeaderEntry.Factory(System.String,System.Object)">
+            <summary>
+            Factory method
+            </summary>
+            <param name="name">Name of header entry</param>
+            <param name="value">Value of header entry</param>
+            <returns><see cref="T:Minimal.Common.HeaderEntry"/> instance</returns>
+        </member>
+        <member name="P:Minimal.Common.HeaderEntry.EntryType">
+            <summary>
+            Entry value's <see cref="T:System.Type"/>
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.HeaderEntry.EntrySize">
+            <summary>
+            Size in bytes of entry (read only)
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.HeaderEntry.EntryBytes">
+            <summary>
+            <code>byte[]</code> containing entry value
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.HeaderEntry.EntryName">
+            <summary>
+            Name of entry
+            </summary>
+        </member>
+        <member name="P:Minimal.Common.HeaderEntry.EntryValue">
+            <summary>
+            Value of entry
+            </summary>
+        </member>
+        <member name="T:Minimal.Compression.CompressionProvider">
+            <summary>
+            Concrete implementation of CompressionProvider class
+            </summary>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.#ctor">
+            <summary>
+            Private constructor prevents direct instantiation (Factory pattern)
+            </summary>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.Factory">
+            <summary>
+            Factory method
+            </summary>
+            <returns>Object implementing ICompressionProvider</returns>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.CompressString(System.String)">
+            <summary>
+            Compress a <code>string</code> value using standard encoder (utf8)
+            </summary>
+            <param name="value"><code>string</code> to compress</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.CompressString(System.String,System.Text.Encoding)">
+            <summary>
+            Compress a <code>string</code> value
+            </summary>
+            <param name="value"><code>string</code> to compress</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert string to byte[]. Pass null to use standard encoding (UTF8).</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.DecompressString(System.Byte[])">
+            <summary>
+            Decompress a <code>byte[]</code> using standard encoder (utf8)
+            </summary>
+            <param name="value">The <code>byte[]</code> to decompress.</param>
+            <returns><code>string</code></returns>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.DecompressString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Decompress a <code>byte[]</code>
+            </summary>
+            <param name="value">The <code>byte[]</code> to decompress.</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert byte[] to string. Pass null to use standard encoding (UTF8).</param>
+            <returns><code>string</code></returns>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.CompressBytes(System.Byte[])">
+            <summary>
+            Compress <code>byte[]</code>
+            </summary>
+            <param name="value"><code>byte[]</code> to compress</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Compression.CompressionProvider.DecompressBytes(System.Byte[])">
+            <summary>
+            Decompress <code>byte[]</code>
+            </summary>
+            <param name="value"><code>byte[]</code> to decompress</param>
+            <returns><code>byte[]</code></returns>
+        </member>
+        <member name="T:Minimal.Custom_Exceptions.CompressionException">
+            <summary>
+            Wrapper class for <code>Exceptions</code> thrown by SMTP class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.CompressionException.#ctor">
+            <summary>
+            Creates an instance of the CompressionException class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.CompressionException.#ctor(System.String)">
+            <summary>
+            Creates an instance of the CompressionException class
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.CompressionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an instance of the CompressionException class
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.CompressionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Creates an instance of the CompressionException class
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Minimal.Custom_Exceptions.DBException">
+            <summary>
+            Wrapper class for <code>Exceptions</code> thrown by the DB classes
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.DBException.#ctor">
+            <summary>
+            Creates an instance of the DBException class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.DBException.#ctor(System.String)">
+            <summary>
+            Creates an instance of the DBException class
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.DBException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an instance of the DBException class
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.DBException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Creates an instance of the DBException class
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Minimal.Custom_Exceptions.HTTPException">
+            <summary>
+            Wrapper class for <code>Exceptions</code> thrown by SMTP class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.HTTPException.#ctor">
+            <summary>
+            Creates an instance of the HTTPException class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.HTTPException.#ctor(System.String)">
+            <summary>
+            Creates an instance of the HTTPException class
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.HTTPException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an instance of the HTTPException class
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.HTTPException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Creates an instance of the HTTPException class
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Minimal.Custom_Exceptions.MSMQException">
+            <summary>
+            Wrapper class for <code>Exceptions</code> thrown by SMTP class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.MSMQException.#ctor">
+            <summary>
+            Creates an instance of the MSMQException class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.MSMQException.#ctor(System.String)">
+            <summary>
+            Creates an instance of the MSMQException class
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.MSMQException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an instance of the MSMQException class
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.MSMQException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Creates an instance of the MSMQException class
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Minimal.Custom_Exceptions.SMTPException">
+            <summary>
+            Wrapper class for <code>Exceptions</code> thrown by SMTP class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.SMTPException.#ctor">
+            <summary>
+            Creates an instance of the SMTPException class
+            </summary>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.SMTPException.#ctor(System.String)">
+            <summary>
+            Creates an instance of the SMTPException class
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.SMTPException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates an instance of the SMTPException class
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Minimal.Custom_Exceptions.SMTPException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Creates an instance of the SMTPException class
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Minimal.Data.DBConfigFileCSProvider">
+            <summary>
+            Concrete implementation of class that retrieves connection string from ConnectionStrings section of config file
+            </summary>
+            <remarks>
+            This class allows connection string entries to be encrypted and base64 encoded.
+            If using encryption, the passphrase for decryption must be present in the appSettings
+            section of the config file with the key value "ApplicationID".
+            </remarks>
+        </member>
+        <member name="M:Minimal.Data.DBConfigFileCSProvider.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ConnectionStringName">Name of ConnectionString in config file</param>
+            <param name="encrypted"><code>true</code> if ConnectionString value is encrypted</param>
+        </member>
+        <member name="M:Minimal.Data.DBConfigFileCSProvider.Factory(System.String,System.Boolean)">
+            <summary>
+            Static object factory method
+            </summary>
+            <param name="ConnectionStringName">Name of ConnectionString in config file</param>
+            <param name="encrypted"><code>true</code> if ConnectionString value is encrypted</param>
+            <returns><code>DBConfigFileCSProvider</code> instance</returns>
+        </member>
+        <member name="M:Minimal.Data.DBConfigFileCSProvider.GetConnectionString">
+            <summary>
+            Retrieve the ConnectionString
+            </summary>
+            <returns><code>System.String</code> The retrieved ConnectionString</returns>
+        </member>
+        <member name="T:Minimal.Data.DBContext">
+            <summary>
+            Concrete implementation of DBContext class
+            </summary>
+        </member>
+        <member name="M:Minimal.Data.DBContext.#ctor(Minimal.Common.DataProviders,Minimal.Interfaces.IDBConnectionStringProvider)">
+            <summary>
+            Private constructor creates an instance of the DBContext class
+            </summary>
+            <param name="provider"><code>Minimal.Data.DataProviders</code> Data provider factory to use</param>
+            <param name="CSProvider">ConnectionString provider to use</param>
+        </member>
+        <member name="M:Minimal.Data.DBContext.Factory(Minimal.Common.DataProviders,Minimal.Interfaces.IDBConnectionStringProvider)">
+            <summary>
+            Static object factory method
+            </summary>
+            <param name="provider"><code>Minimal.Data.DataProviders</code> Data provider factory to use</param>
+            <param name="CSProvider">ConnectionString provider to use</param>
+            <returns><code>IDBContext</code> instance</returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.CreateConnection">
+            <summary>
+            Create a database connection
+            </summary>
+            <returns><code>System.Data.IDbConnection</code></returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.CreateCommand(System.Data.IDbConnection)">
+            <summary>
+            Create a database command object
+            </summary>
+            <param name="connection"><code>System.Data.IDbConnection</code> to use</param>
+            <returns><code>System.Data.IDbCommand</code></returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.CreateCommand(System.String,System.Data.CommandType,System.Data.IDbConnection)">
+            <summary>
+            Create a database command object
+            </summary>
+            <param name="commandText"><code>System.String</code> containing the command text to execute.</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="connection"><code>System.Data.IDbConnection</code> to use</param>
+            <returns><code>System.Data.IDbCommand</code></returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.CreateParameter(System.Data.DbType,System.Data.ParameterDirection,System.String,System.Object)">
+            <summary>
+            Create Parameter
+            </summary>
+            <param name="type"></param>
+            <param name="direction"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.CreateParameter(System.Data.DbType,System.Data.ParameterDirection,System.String,System.Nullable{System.Byte},System.Nullable{System.Byte},System.Nullable{System.Int32},System.String,System.Data.DataRowVersion,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="direction"></param>
+            <param name="name"></param>
+            <param name="precision"></param>
+            <param name="scale"></param>
+            <param name="size"></param>
+            <param name="sourceColumn"></param>
+            <param name="version"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.AddParameterList(System.Data.IDbCommand@,System.Collections.Generic.IList{System.Data.IDbDataParameter})">
+            <summary>
+            Add a list of <code>System.Data.IDbParameter</code> to the <code>System.Data.IDbCommand</code>
+            </summary>
+            <param name="command"><code>System.Data.IDbCommand</code> to use</param>
+            <param name="parameters"><code>System.Collections.Generic.IList&lt;System.Data.IDbParameter&gt;</code> to add</param>
+        </member>
+        <member name="M:Minimal.Data.DBContext.CreateAdapter(System.Data.IDbCommand)">
+            <summary>
+            Create a DataAdapter
+            </summary>
+            <param name="command"><code>System.Data.IDbCommand</code> to use</param>
+            <returns><code>System.Data.IDbDataAdapter</code></returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.CreateDataReader(System.Data.IDbCommand)">
+            <summary>
+            Create a DataReader
+            </summary>
+            <param name="command"><code>System.Data.IDbCommand</code> to use</param>
+            <returns><code>System.Data,IDataReader</code></returns>
+        </member>
+        <member name="M:Minimal.Data.DBContext.GetProviderName">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Minimal.Data.SqlDirect">
+            <summary>
+            Helper class for data access
+            </summary>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.#ctor(Minimal.Interfaces.IDBContext)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.Factory(Minimal.Interfaces.IDBContext)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.DataSet(System.String,System.Data.CommandType,System.Collections.Generic.IList{System.Data.IDbDataParameter})">
+            <summary>
+            Query the database and return a DataSet
+            </summary>
+            <param name="sql"><code>string</code> containing the SQL to execute</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="parameters"><code>List</code> of <code>SqlParameters</code>, null if none</param>
+            <returns><see cref="T:System.Data.DataSet"/></returns>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.DataSet(System.String,System.Data.CommandType,System.Collections.Generic.IList{System.Data.IDbDataParameter},System.Data.IDbConnection@)">
+            <summary>
+            Query the database and return a DataSet using a provided connection
+            </summary>
+            <param name="sql"><code>string</code> containing the SQL to execute</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="parameters"><code>List</code> of <code>SqlParameters</code>, null if none</param>
+            <param name="connection"><see cref="T:System.Data.IDbConnection"/> to use for the operation - the connection will remain open afterwards</param>
+            <returns><see cref="T:System.Data.DataSet"/></returns>
+            <remarks>
+            Since the database connection remains open, the caller is responsible for closing and properly disposing of the connection
+            </remarks>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.DataReader(System.String,System.Data.CommandType,System.Collections.Generic.IList{System.Data.IDbDataParameter},System.Data.IDbConnection@)">
+            <summary>
+            Query the database and return an <code>IDataReader</code> using a provided connection
+            </summary>
+            <param name="sql"><code>string</code> containing the sql to execute</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="parameters"><code>List</code> of <code>SqlParameters</code>, null if none</param>
+            <param name="connection"><code>IDbConnection</code> connection to database</param>
+            <returns><see cref="T:System.Data.IDataReader"/></returns>
+            <remarks>
+            Since a DataReader requires that the database connection remain open
+            for the lifetime of the DataReader, the caller is responsible for closing
+            and properly disposing of the connection
+            </remarks>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.Scalar``1(System.String,System.Data.CommandType,System.Collections.Generic.IList{System.Data.IDbDataParameter})">
+            <summary>
+            Query the database and return a scalar value
+            </summary>
+            <typeparam name="T">The <code>Type</code> of the value to return</typeparam>
+            <param name="sql"><code>string</code> containing the sql to execute</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="parameters"><code>List</code> of <code>SqlParameters</code>, null if none</param>
+            <returns>Scalar value</returns>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.Scalar``1(System.String,System.Data.CommandType,System.Collections.Generic.IList{System.Data.IDbDataParameter},System.Data.IDbConnection@)">
+            <summary>
+            Query the database and return a scalar value using a provided connection
+            </summary>
+            <typeparam name="T">The <code>Type</code> of the value to return</typeparam>
+            <param name="sql"><code>string</code> containing the sql to execute</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="parameters"><code>List</code> of <code>SqlParameters</code>, null if none</param>
+            <param name="connection"><see cref="T:System.Data.IDbConnection"/> to use for the operation - the connection will remain open afterwards</param>
+            <returns>Scalar value</returns>
+            <remarks>
+            Since the database connection remains open, the caller is responsible for closing and properly disposing of the connection
+            </remarks>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.NonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IList{System.Data.IDbDataParameter})">
+            <summary>
+            Issue a non-query against the database
+            </summary>
+            <param name="sql"><code>string</code> containing the SQL to execute</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="parameters"><code>List</code> of <code>SqlParameters</code>, null if none</param>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.NonQuery(System.String,System.Data.CommandType,System.Collections.Generic.IList{System.Data.IDbDataParameter},System.Data.IDbConnection@)">
+            <summary>
+            Issue a non-query against the database using a provided connection
+            </summary>
+            <param name="sql"><code>string</code> containing the SQL to execute</param>
+            <param name="commandType"><code>CommandType</code> enumeration indicating the type of command to execute</param>
+            <param name="parameters"><code>List</code> of <code>SqlParameters</code>, null if none</param>
+            <param name="connection"><see cref="T:System.Data.IDbConnection"/> to use for the operation - the connection will remain open afterwards</param>
+            <remarks>
+            Since the database connection remains open, the caller is responsible for closing and properly disposing of the connection
+            </remarks>
+        </member>
+        <member name="M:Minimal.Data.SqlDirect.GetConnection">
+            <summary>
+            Gets connection using internal DBContext
+            </summary>
+            <returns><see cref="T:System.Data.IDbConnection"/></returns>
+        </member>
+        <member name="T:Minimal.Imaging.Thumbnail">
+            <summary>
+            Provides method for creating thumbnail bitmaps
+            </summary>
+        </member>
+        <member name="M:Minimal.Imaging.Thumbnail.Create(System.IO.Stream,System.Int32)">
+            <summary>
+            Creates a thumbnail from an image stream
+            </summary>
+            <param name="source">The image stream</param>
+            <param name="size">Size in pixels (largest source dimention will be this size in the thumbnail image)</param>
+            <returns>Resized <see cref="T:System.Drawing.Bitmap"/></returns>
+        </member>
+        <member name="T:Minimal.Network.MSMQ">
+            <summary>
+            Wrapper class for Microsoft Messaging
+            </summary>
+            <remarks>
+            Required .Net Framework references:
+            1. System.Messaging
+            2. System.ServiceProcess
+            3. System.Web
+            
+            Required 3rd Party Assemblies:
+            None
+            </remarks>
+        </member>
+        <member name="F:Minimal.Network.MSMQ.GetCorrelationId">
+            <summary>
+            Generates a correctly formatted correlation id
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.isMSMQInstalled">
+            <summary>
+            Determine if MSMQ is installed
+            </summary>
+            <returns><code>bool</code> indicating if Microsoft Message Queuing is installed</returns>
+            <remarks>
+            I normally don't advocate using exception handling in this manner, but...
+            Microsoft suggests, in the developer blog, to PInvoke the Windows LoadLibrary
+            API and attempt to load Mqrt.dll. For MSMQ 1.0 and 2.0, the DLL will not
+            be present and you won't be able to load it. For MSMQ 3.0, the Message
+            Queuing binaries will be present on the disk, but trying to load the DLL
+            fails with ERROR_DLL_INIT_FAILED. The following method, although using
+            exception handling in an unorthodox manner, works, does not require alternate
+            methodology depending on the MSMQ version, and does not require a PInvoke
+            call to a Windows API.
+            </remarks>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.isMSMQServiceRunning">
+            <summary>
+            Determine if the Microsoft Message Queuing service is running
+            </summary>
+            <returns><c>true</c> if the service is running; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.waitForMSMQStartup(System.TimeSpan)">
+            <summary>
+            Wait for MSMQ to start if it is not already running
+            </summary>
+            <param name="timeout"><code>TimeSpan</code> containing maximum amount of time to wait</param>
+            <returns><code>bool</code> indicating if MSMQ is running</returns>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.QueueExists(System.String)">
+            <summary>
+            Determine if queue exists - this method does NOT auto-create queue if it does not exist
+            </summary>
+            <param name="queuePath">Queue path/name</param>
+            <returns><code>bool</code> indicating existence of queue</returns>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.queueMessage(System.String,System.String,System.String)">
+            <summary>
+            Write message to queue
+            </summary>
+            <param name="message">Message to write</param>
+            <param name="correlationID">Correlation Id - <code>null</code> if none</param>
+            <param name="queuePath">Path/Name of queue</param>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.queueMessage(System.Object,System.String,System.String)">
+            <summary>
+            Write message to queue
+            </summary>
+            <param name="message">Message to write (object must implement ISerializable)</param>
+            <param name="correlationID">Correlation Id - <code>null</code> if none</param>
+            <param name="queuePath">Path/Name of queue</param>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.readQueue``1(System.String)">
+            <summary>
+            Read message from queue - message is removed from queue
+            </summary>
+            <typeparam name="T">Return type</typeparam>
+            <param name="queuePath">Path/Name of queue</param>
+            <returns><code>object</code> of type T - <code>default(T)</code> if there are no pending messages in the queue</returns>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.readQueueById``1(System.String,System.String)">
+            <summary>
+            Read message from queue - message is removed from queue
+            </summary>
+            <typeparam name="T">Return type</typeparam>
+            <param name="correlationId">Correlation Id - <code>null</code> if none</param>
+            <param name="queuePath">Path/Name of queue</param>
+            <returns><code>object</code> of type T - <code>default(T)</code> if there are no pending messages in the queue</returns>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.peekQueue``1(System.String)">
+            <summary>
+            Read next message from queue - message is NOT removed from queue
+            </summary>
+            <typeparam name="T">Return type</typeparam>
+            <param name="queuePath">Path/Name of queue</param>
+            <returns><code>object</code> - <code>null</code> if there are no pending messages in the queue</returns>
+        </member>
+        <member name="M:Minimal.Network.MSMQ.queueDepth(System.String)">
+            <summary>
+            Determine number of messages currently in queue
+            </summary>
+            <param name="queuePath">Path/Name of queue</param>
+            <returns><code>UInt32</code> number of messages pending in queue</returns>
+        </member>
+        <member name="T:Minimal.Network.SMTP">
+            <summary>
+            Concrete implementation of the SMTP class
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.SMTP.#ctor">
+            <summary>
+            Private Constructor
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.SMTP.SMTPFactory">
+            <summary>
+            Object factory method
+            </summary>
+            <returns><code>ISMTP</code> instance</returns>
+        </member>
+        <member name="P:Minimal.Network.SMTP.SMTPServer">
+            <summary>
+            <code>System.String</code> containing the SMTP server name
+            </summary>
+        </member>
+        <member name="P:Minimal.Network.SMTP.From">
+            <summary>
+            From <code>System.Net.Mail.MailAddress</code>
+            </summary>
+        </member>
+        <member name="P:Minimal.Network.SMTP.AttachmentCount">
+            <summary>
+            <code>System.Int32</code> Number of attachments
+            </summary>
+        </member>
+        <member name="P:Minimal.Network.SMTP.Port">
+            <summary>
+            <code>System.Int32</code> SMTP port
+            </summary>
+        </member>
+        <member name="P:Minimal.Network.SMTP.useEmailRelay">
+            <summary>
+            <code>System.Boolean</code> indicating use of an email relay
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.SMTP.To(System.Net.Mail.MailAddress)">
+            <summary>
+            Adds a <code>System.Net.Mail.MailAddress</code> to the To address collection
+            </summary>
+            <param name="value"><code>System.Net.Mail.MailAddress</code> to add</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.CC(System.Net.Mail.MailAddress)">
+            <summary>
+            Adds a <code>System.Net.Mail.MailAddress</code> to the CC address collection
+            </summary>
+            <param name="value"><code>System.Net.Mail.MailAddress</code> to add</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.BCC(System.Net.Mail.MailAddress)">
+            <summary>
+            Adds a <code>System.Net.Mail.MailAddress</code> to the BCC address collection
+            </summary>
+            <param name="value"><code>System.Net.Mail.MailAddress</code> to add</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.Priority(System.Net.Mail.MailPriority)">
+            <summary>
+            Sets the priority
+            </summary>
+            <param name="value"><code>System.Net.Mail.MailPriority</code></param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.Subject(System.String)">
+            <summary>
+            Message subject
+            </summary>
+            <param name="value"><code>System.String</code> containing the message subject</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.Body(System.String)">
+            <summary>
+            Message body
+            </summary>
+            <param name="value"><code>System.String</code> containing the message body</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.isBodyHtml(System.Boolean)">
+            <summary>
+            Flag indicating HTML content in the message body
+            </summary>
+            <param name="value"><code>System.Boolean</code> if true message body contains HTML</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.Encoding(System.Text.Encoding)">
+            <summary>
+            Body encoding if body is HTML
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.addAttachment(System.String)">
+            <summary>
+            Add attachment to email
+            </summary>
+            <param name="FileSpec">File to attach</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.addAttachment(System.IO.Stream,System.String)">
+            <summary>
+            Add attachment to email
+            </summary>
+            <param name="thisStream"><see cref="T:System.IO.Stream"/> containing content to attach</param>
+            <param name="Name">Filename for attachment</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.addAttachment(System.IO.Stream,System.String,System.String)">
+            <summary>
+            Add attachment to email
+            </summary>
+            <param name="thisStream"><see cref="T:System.IO.Stream"/> containing content to attach</param>
+            <param name="Name">Filename for attachment</param>
+            <param name="ContentType">Content (Media) type of attachment</param>
+        </member>
+        <member name="M:Minimal.Network.SMTP.clearAttachments">
+            <summary>
+            Remove all attachments
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.SMTP.Send">
+            <summary>
+            Send email to SMTP server
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.SMTP.Dispose">
+            <summary>
+            <see cref="T:System.IDisposable"/> implementation
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.SMTP.Dispose(System.Boolean)">
+            <summary>
+            <see cref="T:System.IDisposable"/> implementation
+            </summary>
+            <param name="disposing"><c>true</c> if disposing; otherwise <c>false</c></param>
+        </member>
+        <member name="T:Minimal.Network.WebHeaderCollectionBuilder">
+            <summary>
+            WebHeaderCollectionBuilder class
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.WebHeaderCollectionBuilder.#ctor">
+            <summary>
+            Private constructor
+            </summary>
+        </member>
+        <member name="M:Minimal.Network.WebHeaderCollectionBuilder.Factory">
+            <summary>
+            Factory method
+            </summary>
+            <returns>WebHeaderCollectionBuilder</returns>
+        </member>
+        <member name="M:Minimal.Network.WebHeaderCollectionBuilder.ToWebHeaderCollection">
+            <summary>
+            Return internal <code>WebHeaderCollection</code>
+            </summary>
+            <returns><code>WebHeaderCollection</code></returns>
+        </member>
+        <member name="M:Minimal.Network.WebHeaderCollectionBuilder.add(System.String,System.String)">
+            <summary>
+            Add and entry to the <code>WebHeaderCollection</code>
+            </summary>
+            <param name="name">Name of header</param>
+            <param name="value">Value of header</param>
+        </member>
+        <member name="T:Minimal.Network.HTTP">
+            <summary>
+            Wrapper class for HTTP functionality
+            </summary>
+            <remarks>
+            Required .Net Framework references:
+            None
+            
+            Required 3rd Party Assemblies:
+            None
+            
+            Internal class dependencies:
+            Minimal.Network.WebHeaderCollectionBuilder
+            </remarks>
+        </member>
+        <member name="M:Minimal.Network.HTTP.sendRequest(System.Uri,Minimal.Common.HTTPVerbs,System.Net.WebHeaderCollection,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Byte[],System.Net.CookieCollection)">
+            <summary>
+            Send HTTP request
+            </summary>
+            <param name="uri">Destination <code>Uri</code></param>
+            <param name="verb">HTTP verb to use</param>
+            <param name="headers">HTTP header collection (null if none)</param>
+            <param name="certificate">X509 Certificate to use (null if none)</param>
+            <param name="data">Data to send as body of request (null if none)</param>
+            <param name="cookies">Cookies to send (null if none)</param>
+            <returns><code>HttpWebResponse</code></returns>
+        </member>
+        <member name="T:Minimal.Security.Certificates.Certificate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Certificates.Certificate.getFromStore(System.Security.Cryptography.X509Certificates.StoreLocation,System.String)">
+            <summary>
+            Get certificate from store
+            </summary>
+            <param name="location">Store location</param>
+            <param name="IssuerName">Name of certificate issuer</param>
+            <returns>X509Certificate2</returns>
+        </member>
+        <member name="M:Minimal.Security.Certificates.Certificate.getFromPFXFile(System.String,System.String)">
+            <summary>
+            Get certificate from pfx file
+            </summary>
+            <param name="location">File location</param>
+            <param name="password">Certificate password</param>
+            <returns>X509Certificate2</returns>
+        </member>
+        <member name="M:Minimal.Security.Certificates.Certificate.getFromCerFile(System.String)">
+            <summary>
+            Get certificate from cer file
+            </summary>
+            <param name="location">File location</param>
+            <returns>X509Certificate2</returns>
+        </member>
+        <member name="T:Minimal.Security.Encryption.AESEncryptionProvider">
+            <summary>
+            Concrete implementation of AES256 EncryptionProvider
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.#ctor">
+            <summary>
+            Private constructor prevents direct instantiation (Factory pattern)
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.Factory">
+            <summary>
+            Factory method
+            </summary>
+            <returns>Object implementing IEncryptionProvider</returns>
+        </member>
+        <member name="P:Minimal.Security.Encryption.AESEncryptionProvider.IsNISTCertifiedAlgorithm">
+            <summary>
+            Returns <c>true</c> if encryption algorithm is certified by NIST as FIPS 140-2 compliant; otherwise <c>false</c>
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.EncryptString(System.String,System.String)">
+            <summary>
+            Encrypts a <code>System.String</code> using the provided passphrase to generate the Key and IV and the standard encoder (utf8)
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.String</code> value to encrypt</param>
+            <returns>base64 encoded encrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.EncryptString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Encrypts a <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.String</code> value to encrypt</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert string to byte[]. Pass null to use standard encoding (UTF8).</param>
+            <returns>base64 encoded encrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.DecryptString(System.String,System.String)">
+            <summary>
+            Decrypts an encrypted, base64 encoded <code>System.String</code> using the provided passphrase to generate the Key and IV and the standard encoder (utf8)
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value">base64 encoded, encrypted <code>System.String</code> to decrypt</param>
+            <returns>Decrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.DecryptString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Decrypts an encrypted, base64 encoded <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value">base64 encoded, encrypted <code>System.String</code> to decrypt</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert byte[] to string. Pass null to use standard encoding (UTF8).</param>
+            <returns>Decrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.EncryptBytes(System.String,System.Byte[])">
+            <summary>
+            Encrypts a <code>System.byte[]</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.byte[]</code> data to encrypt</param>
+            <returns>Encrypted <code>System.byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.AESEncryptionProvider.DecryptBytes(System.String,System.Byte[])">
+            <summary>
+            Decrypts an encrypted <code>System.byte[]</code>
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.byte[]</code> data to decrypt</param>
+            <returns>Decrypted <code>System.byte[]</code></returns>
+        </member>
+        <member name="T:Minimal.Security.Encryption.Digest">
+            <summary>
+            Implementation of cryptographic digest
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Encryption.Digest.getKeyFromPassPhrase(System.String,System.Int32)">
+            <summary>
+            Generates encryption key from passphrase
+            </summary>
+            <param name="PassPhrase">Passphrase to use</param>
+            <param name="size">Number of bytes in generated key</param>
+            <returns><code>byte[]</code> containing encryption key</returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.Digest.getIVFromPassPhrase(System.String,System.Int32)">
+            <summary>
+            Generates initialization vector (IV) from passphrase
+            </summary>
+            <param name="PassPhrase">Passphrase to use</param>
+            <param name="size">Number of bytes in generated IV</param>
+            <returns><code>byte[]</code> containing IV</returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.Digest.getDigest``1(``0,System.Int32)">
+            <summary>
+            Generates encryption digest
+            </summary>
+            <param name="value">Base value, object must implement <see cref="T:System.Runtime.Serialization.ISerializable"/></param>
+            <param name="digestLength">Requested number of bytes in digest</param>
+            <returns><code>byte[]</code> containing encryption digest</returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.Digest.getDigest(System.Byte[],System.Int32)">
+            <summary>
+            Generates encryption digest
+            </summary>
+            <param name="value">Base value</param>
+            <param name="digestLength">Requested number of bytes in digest</param>
+            <returns><code>byte[]</code> containing encryption digest</returns>
+        </member>
+        <member name="T:Minimal.Security.Encryption.TripleDESEncryptionProvider">
+            <summary>
+            Concrete implementation of TripleDES EncryptionProvider
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.#ctor">
+            <summary>
+            Private constructor
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.Factory">
+            <summary>
+            Factory method
+            </summary>
+            <returns>IEncryptionProvider</returns>
+        </member>
+        <member name="P:Minimal.Security.Encryption.TripleDESEncryptionProvider.IsNISTCertifiedAlgorithm">
+            <summary>
+            Returns <c>true</c> if encryption algorithm is certified by NIST as FIPS 140-2 compliant; otherwise <c>false</c>
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.EncryptString(System.String,System.String)">
+            <summary>
+            Encrypts a <code>System.String</code> using the provided passphrase to generate the Key and IV and the standard encoder (utf8)
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.String</code> value to encrypt</param>
+            <returns>base64 encoded encrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.EncryptString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Encrypts a <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.String</code> value to encrypt</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert string to byte[]. Pass null to use standard encoding (UTF8).</param>
+            <returns>base64 encoded encrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.DecryptString(System.String,System.String)">
+            <summary>
+            Decrypts an encrypted, base64 encoded <code>System.String</code> using the provided passphrase to generate the Key and IV and the standard encoder (utf8)
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value">base64 encoded, encrypted <code>System.String</code> to decrypt</param>
+            <returns>Decrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.DecryptString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Decrypts an encrypted, base64 encoded <code>System.String</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value">base64 encoded, encrypted <code>System.String</code> to decrypt</param>
+            <param name="encoder">The <code>System.Text.Encoding</code> used to convert byte[] to string. Pass null to use standard encoding (UTF8).</param>
+            <returns>Decrypted <code>System.String</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.EncryptBytes(System.String,System.Byte[])">
+            <summary>
+            Encrypts a <code>System.byte[]</code> using the provided passphrase to generate the Key and IV
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.byte[]</code> data to encrypt</param>
+            <returns>Encrypted <code>System.byte[]</code></returns>
+        </member>
+        <member name="M:Minimal.Security.Encryption.TripleDESEncryptionProvider.DecryptBytes(System.String,System.Byte[])">
+            <summary>
+            Decrypts an encrypted <code>System.byte[]</code>
+            </summary>
+            <param name="passphrase"><code>System.String</code> passphrase to use</param>
+            <param name="value"><code>System.byte[]</code> data to decrypt</param>
+            <returns>Decrypted <code>System.byte[]</code></returns>
+        </member>
+        <member name="T:Minimal.Security.Process">
+            <summary>
+            Determine if the current process is running with elevated permissions
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.Process.IsRunningElevated">
+            <summary>
+            Determine if the current process is running with elevated permissions
+            </summary>
+            <returns><c>true</c> if running with elevated permissions; otherwise <c>false</c></returns>
+        </member>
+        <member name="T:Minimal.Security.User">
+            <summary>
+            User information
+            </summary>
+        </member>
+        <member name="P:Minimal.Security.User.SID">
+            <summary>
+            Get user's security identifier
+            </summary>
+        </member>
+        <member name="P:Minimal.Security.User.NetworkDomain">
+            <summary>
+            Get user's network domain
+            </summary>
+        </member>
+        <member name="M:Minimal.Security.User.IsAdmin">
+            <summary>
+            Determine if user is an administrator on this computer
+            </summary>
+            <returns><c>true</c> if the user is an administrator</returns>
+        </member>
+        <member name="M:Minimal.Security.User.GetSid(System.String)">
+            <summary>
+            PInvoke Windows APIs to determine user's SID
+            </summary>
+            <param name="name">Network username</param>
+            <returns><c>string</c> containing the user's SID</returns>
+        </member>
+        <member name="T:Minimal.StateTracking.ValueStateTracker`1">
+            <summary>
+            Value state tracking
+            </summary>
+        </member>
+        <member name="M:Minimal.StateTracking.ValueStateTracker`1.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Minimal.StateTracking.ValueStateTracker`1.CurrentValue">
+            <summary>
+            Current value
+            </summary>
+        </member>
+        <member name="P:Minimal.StateTracking.ValueStateTracker`1.IsChanged">
+            <summary>
+            <c>true</c> if value has changed; otherwise <c>false</c>
+            </summary>
+        </member>
+        <member name="M:Minimal.StateTracking.ValueStateTracker`1.ChangeValue(`0)">
+            <summary>
+            Change the value
+            </summary>
+            <param name="newValue">New value</param>
+        </member>
+        <member name="M:Minimal.StateTracking.ValueStateTracker`1.AcceptChanges">
+            <summary>
+            Accept changes
+            </summary>
+        </member>
+        <member name="M:Minimal.StateTracking.ValueStateTracker`1.SetInitialState">
+            <summary>
+            Set initial state
+            </summary>
+        </member>
+        <member name="T:Minimal.Utility.BitMask">
+            <summary>
+            Concrete implementation of BitMask, a class for manipulating a set of bits (bit mask)
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.#ctor(System.UInt64)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="baseValue">Base value for BitMask</param>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.Factory">
+            <summary>
+            Factory method
+            </summary>
+            <returns>BitMask object</returns>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.Factory(System.UInt64)">
+            <summary>
+            Factory method
+            </summary>
+            <param name="baseValue">Base value for BitMask</param>
+            <returns>BitMask object</returns>
+        </member>
+        <member name="P:Minimal.Utility.BitMask.BaseValue">
+            <summary>
+            The base value of the bitmap
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.GetBitValue(System.Int32)">
+            <summary>
+            Get the value of the bit at the supplied position position in the bitmask
+            </summary>
+            <param name="bitPosition">Bit position</param>
+            <returns><code>true</code> if the bit is on and <code>false</code> if it is off</returns>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.SetBit(System.Int32)">
+            <summary>
+            Turn on bit at the supplied position in the bitmask
+            </summary>
+            <param name="bitPosition">Bit position</param>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.ClearBit(System.Int32)">
+            <summary>
+            Turn off bit at the supplied position in the bitmask
+            </summary>
+            <param name="bitPosition">Bit position</param>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.SetAll">
+            <summary>
+            Turn on all bits in the bitmask
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.ClearAll">
+            <summary>
+            Turn off all bits in the bitmask
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.TestBitPosition(System.Int32)">
+            <summary>
+            Test bit at given position
+            </summary>
+            <param name="bitPosition">Position to test</param>
+        </member>
+        <member name="M:Minimal.Utility.BitMask.GetMask(System.Int32)">
+            <summary>
+            Get the mask value
+            </summary>
+            <param name="shift">Position of bit</param>
+            <returns>Binary mask</returns>
+        </member>
+        <member name="T:Minimal.Utility.ClassExtensions">
+            <summary>
+            Common class extensions
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.IsSQLValid(System.DateTime)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="dt">The <see cref="T:System.DateTime"/> to check</param>
+            <returns><c>true</c> if the <see cref="T:System.DateTime"/> is valid; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.JulianDate(System.DateTime)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="dt">The <see cref="T:System.DateTime"/> to convert</param>
+            <returns>Julian calendar date</returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.Elapsed(System.DateTime)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.ElapsedAsOf(System.DateTime,System.DateTime)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="dt"></param>
+            <param name="compare"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.Age(System.DateTime)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.AgeAsOf(System.DateTime,System.DateTime)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="dt"></param>
+            <param name="compare"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.IsAfter(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="value">Value to test</param>
+            <param name="query">Value to test against</param>
+            <param name="inclusive">If <c>true</c> the test is inclusive of value</param>
+            <returns><c>true</c> if value is after query; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.IsBefore(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="value">Value to test</param>
+            <param name="query">Value to test against</param>
+            <param name="inclusive">If <c>true</c> the test is inclusive of value</param>
+            <returns><c>true</c> if value is before query; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.IsBetween(System.DateTime,System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            <see cref="T:System.DateTime"/> extension
+            </summary>
+            <param name="value">Value to test</param>
+            <param name="lowerbound">Lowerbound value for comparison</param>
+            <param name="upperbound">Upperbound value for comparison</param>
+            <param name="inclusive">If <c>true</c> the test is inclusive of value</param>
+            <returns><c>true</c> if value is within the span of dates defined by lowerbound and upperbound; otherwise <c>false</c></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.ToXElement(System.Xml.XmlNode)">
+            <summary>
+            <see cref="T:System.Xml.XmlNode"/> extension
+            </summary>
+            <param name="value">The <see cref="T:System.Xml.XmlNode"/> to convert</param>
+            <returns><see cref="T:System.Xml.Linq.XElement"/></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.ToXmlNode(System.Xml.Linq.XElement)">
+            <summary>
+            <see cref="T:System.Xml.Linq.XElement"/> extension
+            </summary>
+            <param name="value">The <see cref="T:System.Xml.Linq.XElement"/> to convert</param>
+            <returns><see cref="T:System.Xml.XmlNode"/></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.ToXDocument(System.Xml.XmlDocument)">
+            <summary>
+            <see cref="T:System.Xml.XmlDocument"/> extension
+            </summary>
+            <param name="value">The <see cref="T:System.Xml.XmlDocument"/> to convert</param>
+            <returns><see cref="T:System.Xml.Linq.XDocument"/></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.ToXDocument(System.Xml.XmlDocument,System.Xml.Linq.LoadOptions)">
+            <summary>
+            <see cref="T:System.Xml.XmlDocument"/> extension
+            </summary>
+            <param name="value">The <see cref="T:System.Xml.XmlDocument"/> to convert</param>
+            <param name="options"><see cref="T:System.Xml.Linq.XDocument"/> <see cref="T:System.Xml.Linq.LoadOptions"/></param>
+            <returns><see cref="T:System.Xml.Linq.XDocument"/></returns>
+        </member>
+        <member name="M:Minimal.Utility.ClassExtensions.ToXmlDocument(System.Xml.Linq.XDocument)">
+            <summary>
+            <see cref="T:System.Xml.Linq.XDocument"/> extension
+            </summary>
+            <param name="value">The <see cref="T:System.Xml.Linq.XDocument"/> to convert</param>
+            <returns><see cref="T:System.Xml.XmlDocument"/></returns>
+        </member>
+        <member name="T:Minimal.Utility.EntityHelper">
+            <summary>
+            Entity helper class
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.EntityHelper.SetEntityId``1(``0,System.Int32)">
+            <summary>
+            Set entity base class' Id field (entities inheriting PersistentEntityBase)
+            </summary>
+            <typeparam name="TEntity">The entity's type</typeparam>
+            <param name="entity">The entity</param>
+            <param name="Id">The value for Id</param>
+        </member>
+        <member name="M:Minimal.Utility.EntityHelper.EntityAcceptChanges``1(``0)">
+            <summary>
+            Invoke entity base class' AcceptChanges method (entities inheriting PersistentEntityBase)
+            </summary>
+            <typeparam name="TEntity">The entity's type</typeparam>
+            <param name="entity">The entity</param>
+        </member>
+        <member name="M:Minimal.Utility.EntityHelper.EntityModifiedDate``1(``0,System.DateTime)">
+            <summary>
+            Set entity class' ModifiedDate field (entities inheriting PersistentEntityBase)
+            </summary>
+            <typeparam name="TEntity">The entity's type</typeparam>
+            <param name="entity">The entity</param>
+            <param name="date">The value for ModifiedDate</param>
+        </member>
+        <member name="T:Minimal.Utility.ExceptionParser">
+            <summary>
+            Provides a recursive method to parse nested exceptions into a formatted string.
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.ExceptionParser.Parse(System.Exception)">
+            <summary>
+            Method to parse an exception into a formatted string.
+            </summary>
+            <param name="ex">The Exception</param>
+            <returns>String containing exception detail</returns>
+        </member>
+        <member name="M:Minimal.Utility.ExceptionParser.InnerParse(System.Exception)">
+            <summary>
+            Recursive method to parse nested exceptions into a formatted string.
+            </summary>
+            <param name="ex">The Exception</param>
+        </member>
+        <member name="T:Minimal.Utility.FileIO">
+            <summary>
+            File Input/Output
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.FileIO.ReadBinaryFile(System.String)">
+            <summary>
+            Read a binary file
+            </summary>
+            <param name="FileSpec">File to read</param>
+            <returns><c>byte[]</c> containing the contents of the file</returns>
+        </member>
+        <member name="M:Minimal.Utility.FileIO.ReadTextFile(System.String)">
+            <summary>
+            Read a text file
+            </summary>
+            <param name="FileSpec">File to read</param>
+            <returns><c>string</c> containing the contents of the file</returns>
+        </member>
+        <member name="M:Minimal.Utility.FileIO.ReadTextFile(System.String,System.Text.Encoding)">
+            <summary>
+            Read a text file
+            </summary>
+            <param name="FileSpec">File to read</param>
+            <param name="FileEncoding">The text encoding to use</param>
+            <returns><c>string</c> containing the contents of the file</returns>
+        </member>
+        <member name="M:Minimal.Utility.FileIO.WriteBinaryFile(System.String,System.IO.FileMode,System.Byte[])">
+            <summary>
+            Write a binary file
+            </summary>
+            <param name="FileSpec">File to write</param>
+            <param name="Mode"><see cref="T:System.IO.FileMode"/></param>
+            <param name="content"><c>byte[]</c> to write to the file</param>
+        </member>
+        <member name="M:Minimal.Utility.FileIO.WriteTextFile(System.String,System.IO.FileMode,System.String)">
+            <summary>
+            Write a text file
+            </summary>
+            <param name="FileSpec">File to write</param>
+            <param name="Mode"><see cref="T:System.IO.FileMode"/></param>
+            <param name="Content"><c>string</c> to write to the file</param>
+        </member>
+        <member name="M:Minimal.Utility.FileIO.WriteTextFile(System.String,System.IO.FileMode,System.String,System.Text.Encoding)">
+            <summary>
+            Write a text file
+            </summary>
+            <param name="FileSpec">File to write</param>
+            <param name="Mode"><see cref="T:System.IO.FileMode"/></param>
+            <param name="Content"><c>string</c> to write to the file</param>
+            <param name="FileEncoding">The text encoding to use</param>
+        </member>
+        <member name="M:Minimal.Utility.FileIO.Delete(System.String,System.Boolean)">
+            <summary>
+            Deletes the file
+            </summary>
+            <param name="fileSpec">The file to delete</param>
+            <param name="secure"><c>true</c> if using secure delete; otherwise <c>false</c></param>
+        </member>
+        <member name="T:Minimal.Utility.LogEngine">
+            <summary>
+            This class maintains application log files
+            To use this class, the account under which your
+            application runs must have permission to write
+            to the application's folder. Alternatively, a
+            log folder can be specified in the application's
+            .config file in the appSettings section.
+            Example:
+            &lt;appSettings&gt;
+                &lt;add key="ApplicationLogFolder" value="c:\logs\" /&gt;
+            &lt;/appSettings&gt;
+            </summary>
+            <remarks>
+            Required 3rd Party Assemblies:
+            Ionic.Zip.dll (DotNetZipLib)
+            
+            Internal class dependencies:
+            Minimal.Utility.FileIO
+            Minimal.Utility.ExceptionParser
+            </remarks>
+        </member>
+        <member name="P:Minimal.Utility.LogEngine.CurrentLogFileName">
+            <summary>
+            Retrieve current log file name
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.ArchiveFileName(System.DateTime)">
+            <summary>
+            Gets archive file name based on date
+            </summary>
+            <param name="date"><code>DateTime</code> used to generate archive file name</param>
+            <returns><code>string</code> containing file name</returns>
+        </member>
+        <member name="P:Minimal.Utility.LogEngine.ApplicationLogFolder">
+            <summary>
+            Retrieve application log folder
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.Log(System.String,System.Boolean)">
+            <summary>
+            Write a message to the current log file
+            </summary>
+            <param name="message">Message to write</param>
+            <param name="verbose"><code>bool</code> flag indicating if logging non-exception messages</param>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.Log(System.String,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Write a message to the current log file
+            </summary>
+            <param name="message">Message to write</param>
+            <param name="verbose"><code>bool</code> flag indicating if logging non-exception messages</param>
+            <param name="encoder"><code>Encoding</code> to use when writing entries to log file</param>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.Log(System.Exception)">
+            <summary>
+            Write an exception message to the current log file
+            </summary>
+            <param name="ex"><code>Exception</code> to parse and log</param>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.Log(System.Exception,System.Text.Encoding)">
+            <summary>
+            Write an exception message to the current log file
+            </summary>
+            <param name="ex"><code>Exception</code> to parse and log</param>
+            <param name="encoder"><code>Encoding</code> to use when writing entries to log file</param>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.Init">
+            <summary>
+            Initialize class
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.Init(System.Text.Encoding)">
+            <summary>
+            Initialize class
+            </summary>
+            <param name="encoder"><code>Encoding</code> to use when writing entries to log file</param>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GetMethodSignature(System.Diagnostics.StackFrame)">
+            <summary>
+            Get signature of calling method
+            </summary>
+            <param name="sf"><code>StackFrame</code></param>
+            <returns><code>string</code> containing method signature</returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.ParseException(System.Exception)">
+            <summary>
+            Parse <code>Exception</code> to formatted string
+            </summary>
+            <param name="ex"><code>Exception</code> to parse</param>
+            <returns><code>string</code> containing parser formatted <code>Exception></code></returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.WriteToFile(System.String)">
+            <summary>
+            Write to file
+            </summary>
+            <param name="message">Message to write</param>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GeneratePath">
+            <summary>
+            Generate the path to the application log folder
+            </summary>
+            <returns><code>string</code> containing path</returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GenerateFileName">
+            <summary>
+            Generate log file name
+            </summary>
+            <returns><code>string</code> containing file name</returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GenerateFileSpec">
+            <summary>
+            Generate file specification (path\filename)
+            </summary>
+            <returns><code>string</code> containing file specification</returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GenerateArchiveFileName(System.DateTime)">
+            <summary>
+            Generate archive file name
+            </summary>
+            <param name="date"><code>DateTime</code> on which to base file name</param>
+            <returns><code>string</code> containing file name</returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GenerateArchiveFileName(System.String)">
+            <summary>
+            Generate archive file name based on log file name
+            </summary>
+            <param name="fileName">Log file name used to generate archive file name</param>
+            <returns><code>string</code> containing file name</returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GenerateArchiveFileSpec(System.String)">
+            <summary>
+            Generate archive file specification (path\filename) based on log file name
+            </summary>
+            <param name="fileName">Log file name on which to base archive file specification</param>
+            <returns><code>string</code> containing file specification</returns>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.Cleanup">
+            <summary>
+            Examines all files in application log folder and archives appropriate files
+            runs each time a new message is logged
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.LogEngine.GenerateEntryHeader">
+            <summary>
+            Generate log entry heaeder
+            </summary>
+            <returns><code>string</code> containing log entry header</returns>
+        </member>
+        <member name="T:Minimal.Utility.StreamUtility">
+            <summary>
+            Utility methods for reading Streams.
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.StreamUtility.ReadFullStream(System.IO.Stream)">
+            <summary>
+            Reads a <code>System.IO.Stream</code> to it's end using default (64K) buffer.
+            </summary>
+            <param name="stream"><code>System.IO.Stream</code> to read.</param>
+            <returns><code>System.byte[]</code></returns>
+            <seealso cref="M:Minimal.Utility.StreamUtility.ReadFullStream(System.IO.Stream,System.Int32)"/>
+        </member>
+        <member name="M:Minimal.Utility.StreamUtility.ReadFullStream(System.IO.Stream,System.Int32)">
+            <summary>
+            Reads a <code>System.IO.Stream</code> to it's end using indicated buffer size.
+            </summary>
+            <param name="stream"><code>System.IO.Stream</code></param>
+            <param name="bufferSize">Buffer size in bytes</param>
+            <returns><code>System.byte[]</code></returns>
+            <seealso cref="M:Minimal.Utility.StreamUtility.ReadFullStream(System.IO.Stream)"/>
+        </member>
+        <member name="M:Minimal.Utility.StreamUtility.StringToStream(System.String)">
+            <summary>
+            Reads <code>System.String</code> contents into a <code>System.IO.Stream</code> using default (UTF8) encoding.
+            </summary>
+            <param name="value"><code>System.String</code></param>
+            <returns><code>System.IO.Stream</code></returns>
+            <seealso cref="M:Minimal.Utility.StreamUtility.StringToStream(System.String,System.Text.Encoding)"/>
+        </member>
+        <member name="M:Minimal.Utility.StreamUtility.StringToStream(System.String,System.Text.Encoding)">
+            <summary>
+            Reads <code>System.String</code> contents into a <code>System.IO.Stream</code> using indicated <code>System.Text.Encoding</code>.
+            </summary>
+            <param name="value"><code>System.String</code></param>
+            <param name="encoder"><code>System.Text.Encoding</code></param>
+            <returns><code>System.String</code></returns>
+            <seealso cref="M:Minimal.Utility.StreamUtility.StringToStream(System.String)"/>
+        </member>
+        <member name="M:Minimal.Utility.StreamUtility.StreamToString(System.IO.Stream)">
+            <summary>
+            Reads System.IO.Stream contents into a System.String using default (UTF8) encoding.
+            </summary>
+            <param name="stream">System.IO.Stream</param>
+            <returns>System.String</returns>
+            <seealso cref="M:Minimal.Utility.StreamUtility.StreamToString(System.IO.Stream,System.Text.Encoding)"/>
+        </member>
+        <member name="M:Minimal.Utility.StreamUtility.StreamToString(System.IO.Stream,System.Text.Encoding)">
+            <summary>
+            Reads System.IO.Stream contents into a System.String using indicated encoding.
+            </summary>
+            <param name="stream">System.IO.Stream</param>
+            <param name="encoder">System.Text.Encoding</param>
+            <returns>System.String</returns>
+            <seealso cref="M:Minimal.Utility.StreamUtility.StreamToString(System.IO.Stream)"/>
+        </member>
+        <member name="T:Minimal.Utility.StringUnboxer">
+            <summary>
+            Convert string values to specified type
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.StringUnboxer.UnBox``1(System.String)">
+            <summary>
+            Convert <code>string</code> value to object of type T
+            </summary>
+            <typeparam name="T"><code>Type</code> to return</typeparam>
+            <param name="value"><code>string</code> containing value to convert</param>
+            <returns>Object of type T</returns>
+        </member>
+        <member name="M:Minimal.Utility.StringUnboxer.CanUnBox``1(System.String)">
+            <summary>
+            Attempt conversion
+            </summary>
+            <typeparam name="T"><code>Type</code> to return</typeparam>
+            <param name="value"><code>string</code> containing value to convert</param>
+            <returns><code>bool</code> flag indicating conversion succeeded of failed</returns>
+        </member>
+        <member name="T:Minimal.Utility.Version">
+            <summary>
+            Static class providing methods to query the library and application versions
+            </summary>
+        </member>
+        <member name="M:Minimal.Utility.Version.LibraryVersion">
+            <summary>
+            Returns the version of this library
+            </summary>
+            <returns><c>String</c> containing the library version</returns>
+        </member>
+        <member name="M:Minimal.Utility.Version.ApplicationVersion">
+            <summary>
+            Returns the version of the application calling this library
+            </summary>
+            <returns><c>String</c> containing the application version</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,16 @@
+D:\Workspace\Minimal\EncryptionTool\bin\Release\EncryptionTool.exe.config
+D:\Workspace\Minimal\EncryptionTool\bin\Release\EncryptionTool.exe
+D:\Workspace\Minimal\EncryptionTool\bin\Release\EncryptionTool.pdb
+D:\Workspace\Minimal\EncryptionTool\bin\Release\Minimal.dll
+D:\Workspace\Minimal\EncryptionTool\bin\Release\Ionic.Zip.dll
+D:\Workspace\Minimal\EncryptionTool\bin\Release\Minimal.xml
+D:\Workspace\Minimal\EncryptionTool\obj\Release\EncryptionTool.csprojResolveAssemblyReference.cache
+D:\Workspace\Minimal\EncryptionTool\obj\Release\MainWindow.baml
+D:\Workspace\Minimal\EncryptionTool\obj\Release\MainWindow.g.cs
+D:\Workspace\Minimal\EncryptionTool\obj\Release\App.g.cs
+D:\Workspace\Minimal\EncryptionTool\obj\Release\EncryptionTool_MarkupCompile.cache
+D:\Workspace\Minimal\EncryptionTool\obj\Release\EncryptionTool.g.resources
+D:\Workspace\Minimal\EncryptionTool\obj\Release\EncryptionTool.Properties.Resources.resources
+D:\Workspace\Minimal\EncryptionTool\obj\Release\EncryptionTool.csproj.GenerateResource.Cache
+D:\Workspace\Minimal\EncryptionTool\obj\Release\EncryptionTool.exe
+D:\Workspace\Minimal\EncryptionTool\obj\Release\EncryptionTool.pdb

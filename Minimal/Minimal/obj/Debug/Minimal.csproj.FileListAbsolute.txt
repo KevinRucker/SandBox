@@ -1,0 +1,7 @@
+D:\Workspace\Minimal\Minimal\bin\Debug\Minimal.XML
+D:\Workspace\Minimal\Minimal\bin\Debug\Minimal.dll
+D:\Workspace\Minimal\Minimal\bin\Debug\Minimal.pdb
+D:\Workspace\Minimal\Minimal\bin\Debug\Ionic.Zip.dll
+D:\Workspace\Minimal\Minimal\obj\Debug\Minimal.dll
+D:\Workspace\Minimal\Minimal\obj\Debug\Minimal.pdb
+D:\Workspace\Minimal\Minimal\obj\Debug\Minimal.csprojResolveAssemblyReference.cache

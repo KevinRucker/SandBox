@@ -1,0 +1,9 @@
+D:\Workspace\Minimal\MinimalUnitTests\bin\Release\MinimalUnitTests.dll.config
+D:\Workspace\Minimal\MinimalUnitTests\bin\Release\MinimalUnitTests.dll
+D:\Workspace\Minimal\MinimalUnitTests\bin\Release\MinimalUnitTests.pdb
+D:\Workspace\Minimal\MinimalUnitTests\bin\Release\Minimal.dll
+D:\Workspace\Minimal\MinimalUnitTests\bin\Release\Ionic.Zip.dll
+D:\Workspace\Minimal\MinimalUnitTests\bin\Release\Minimal.xml
+D:\Workspace\Minimal\MinimalUnitTests\obj\Release\MinimalUnitTests.csprojResolveAssemblyReference.cache
+D:\Workspace\Minimal\MinimalUnitTests\obj\Release\MinimalUnitTests.dll
+D:\Workspace\Minimal\MinimalUnitTests\obj\Release\MinimalUnitTests.pdb

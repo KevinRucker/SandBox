@@ -1,0 +1,4 @@
+D:\Workspace\Minimal\Minimal\bin\Release\Minimal.XML
+D:\Workspace\Minimal\Minimal\bin\Release\Minimal.dll
+D:\Workspace\Minimal\Minimal\bin\Release\Ionic.Zip.dll
+D:\Workspace\Minimal\Minimal\obj\Release\Minimal.dll

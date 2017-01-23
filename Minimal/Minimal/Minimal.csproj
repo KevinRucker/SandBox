@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D2FA76D-D380-47F2-971C-B1A5C51E066D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Minimal</RootNamespace>
+    <AssemblyName>Minimal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Minimal.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Minimal.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConfigManager.cs" />
+    <Compile Include="Configuration\ConfigSection.cs" />
+    <Compile Include="Configuration\ConfigSectionHandler.cs" />
+    <Compile Include="Framework\BaseClasses\PersistentEntityBase.cs" />
+    <Compile Include="Framework\BaseClasses\DaoBase.cs" />
+    <Compile Include="Framework\Interfaces\IDaoBase.cs" />
+    <Compile Include="Interfaces\IConfigSection.cs" />
+    <Compile Include="Interfaces\IValueStateTracker.cs" />
+    <Compile Include="Common\DataContainer.cs" />
+    <Compile Include="Common\Factory.cs" />
+    <Compile Include="Common\NativeMethods.cs" />
+    <Compile Include="Compression\CompressionProvider.cs" />
+    <Compile Include="Custom Exceptions\CompressionException.cs" />
+    <Compile Include="Custom Exceptions\DBException.cs" />
+    <Compile Include="Custom Exceptions\HTTPException.cs" />
+    <Compile Include="Custom Exceptions\MSMQException.cs" />
+    <Compile Include="Custom Exceptions\SMTPException.cs" />
+    <Compile Include="Custom Exceptions\UserException.cs" />
+    <Compile Include="Data\DBConnectionStringProvider.cs" />
+    <Compile Include="Data\DBContext.cs" />
+    <Compile Include="Common\Enumerations.cs" />
+    <Compile Include="Data\SqlDirect.cs" />
+    <Compile Include="Imaging\Thumbnail.cs" />
+    <Compile Include="Interfaces\IBinaryHeader.cs" />
+    <Compile Include="Interfaces\IBitMask.cs" />
+    <Compile Include="Interfaces\IDataContainer.cs" />
+    <Compile Include="Interfaces\IHeaderEntry.cs" />
+    <Compile Include="Interfaces\ISMTP.cs" />
+    <Compile Include="Network\MSMQ.cs" />
+    <Compile Include="Network\SMTP.cs" />
+    <Compile Include="Network\WebHeaderCollectionBuilder.cs" />
+    <Compile Include="Security\Certificates\Certificate.cs" />
+    <Compile Include="Security\Encryption\AESEncryptionProvider.cs" />
+    <Compile Include="Security\Encryption\Digest.cs" />
+    <Compile Include="Interfaces\ICompressionProvider.cs" />
+    <Compile Include="Interfaces\IDBConnectionStringProvider.cs" />
+    <Compile Include="Interfaces\IDBContext.cs" />
+    <Compile Include="Interfaces\IEncryptionProvider.cs" />
+    <Compile Include="Network\HTTP.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Encryption\TripleDESEncryptionProvider.cs" />
+    <Compile Include="Common\BinaryHeader.cs" />
+    <Compile Include="Security\Process.cs" />
+    <Compile Include="Security\User.cs" />
+    <Compile Include="StateTracking\ValueStateTracker.cs" />
+    <Compile Include="Utility\BitMask.cs" />
+    <Compile Include="Utility\ClassExtensions.cs" />
+    <Compile Include="Utility\EntityHelper.cs" />
+    <Compile Include="Utility\ExceptionParser.cs" />
+    <Compile Include="Utility\FileIO.cs" />
+    <Compile Include="Common\HeaderEntry.cs" />
+    <Compile Include="Utility\LogEngine.cs" />
+    <Compile Include="Utility\StreamUtility.cs" />
+    <Compile Include="Utility\StringUnboxer.cs" />
+    <Compile Include="Utility\Version.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assemblies\Ionic.Zip.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

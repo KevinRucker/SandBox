@@ -1,0 +1,25 @@
+﻿<Window x:Class="EncryptionTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Encryption Tool" Height="256" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Icon>
+        <BitmapImage UriSource="file:///D:/Workspace/Minimal/EncryptionTool/maintenance.ico"/>
+    </Window.Icon>
+    <Grid Width="779">
+        <Label Content="ApplicationID" Height="28" HorizontalAlignment="Left" Margin="7,24,0,0" Name="label1" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="95,24,0,0" Name="txtApplicationID" VerticalAlignment="Top" Width="227" TextChanged="txtApplicationID_TextChanged" />
+        <Label Content="Source" Height="28" HorizontalAlignment="Left" Margin="7,55,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="11,78,0,0" Name="txtSource" VerticalAlignment="Top" Width="761" />
+        <Label Content="Result" Height="28" HorizontalAlignment="Left" Margin="6,107,0,0" Name="label3" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="12,134,0,0" Name="txtResult" VerticalAlignment="Top" Width="760" />
+        <Button Content="Encrypt" Height="23" HorizontalAlignment="Left" Margin="12,170,0,0" Name="btnEncrypt" VerticalAlignment="Top" Width="75" Click="btnEncrypt_Click" />
+        <Button Content="Decrypt" Height="23" HorizontalAlignment="Left" Margin="95,170,0,0" Name="btnDecrypt" VerticalAlignment="Top" Width="75" Click="btnDecrypt_Click" />
+        <Button Content="Move Result to Source" Height="23" HorizontalAlignment="Left" Margin="177,170,0,0" Name="btnMove" VerticalAlignment="Top" Width="145" Click="btnMove_Click" />
+        <Button Content="Copy Result to Clipboard" Height="23" HorizontalAlignment="Left" Margin="329,170,0,0" Name="btnCopy" VerticalAlignment="Top" Width="150" Click="btnCopy_Click" />
+        <Button Content="Clear Data" Height="23" HorizontalAlignment="Left" Margin="487,170,0,0" Name="btnClear" VerticalAlignment="Top" Width="75" Click="btnClear_Click" />
+        <Button Content="Generate New Guid" Height="23" HorizontalAlignment="Left" Margin="331,24,0,0" Name="btnNewGuid" VerticalAlignment="Top" Width="125" Click="btnNewGuid_Click" />
+        <Image Height="52" HorizontalAlignment="Left" Margin="718,12,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="54" Source="/EncryptionTool;component/maintenance.ico" />
+        <Label Content="NIST Certified Encryption Algorithm:" Height="28" HorizontalAlignment="Left" Margin="537,111,0,0" Name="label4" VerticalAlignment="Top" />
+        <Label Height="28" HorizontalAlignment="Right" Margin="0,111,8,0" Name="NISTCert" VerticalAlignment="Top" Width="35" />
+    </Grid>
+</Window>
