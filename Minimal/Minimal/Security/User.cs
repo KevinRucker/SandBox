@@ -49,6 +49,7 @@ namespace Minimal.Security
     public class User
     {
         private static readonly object _lock = new object();
+        private static bool _isWebApp = HttpContext.Current != null;
 
         /// <summary>
         /// Get user's security identifier
@@ -57,7 +58,7 @@ namespace Minimal.Security
         {
             get
             {
-                if (HttpContext.Current != null)
+                if (_isWebApp)
                 {
                     return HttpContext.Current.Request.LogonUserIdentity.User.Value;
                 }
@@ -76,7 +77,7 @@ namespace Minimal.Security
         {
             get
             {
-                if (HttpContext.Current != null)
+                if (_isWebApp)
                 {
                     string winLogin = (!string.IsNullOrEmpty(HttpContext.Current.Request.LogonUserIdentity.Name)) ? HttpContext.Current.Request.LogonUserIdentity.Name : "Anonymous";
                     string[] logon = winLogin.Split('\\');

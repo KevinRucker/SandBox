@@ -11,7 +11,7 @@ namespace MinimalUnitTests
         public void ConfigurationTestMethod1()
         {
             var expectedGuid = Guid.Parse("e4c8a9d4-6105-4e2d-87bf-ece64f64e292");
-            var expectedQueue = @".\private$\TestQueue";
+            var expectedQueue = @".\private$\TestingQueue";
             var expectedEncryptedAppSetting = "AppSetting encrypted test value.";
             var expectedTestSetting1 = default(string);
             var expectedTestSetting2 = default(TimeSpan);

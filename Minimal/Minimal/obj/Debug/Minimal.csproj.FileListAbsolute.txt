@@ -5,3 +5,10 @@ D:\Workspace\Minimal\Minimal\bin\Debug\Ionic.Zip.dll
 D:\Workspace\Minimal\Minimal\obj\Debug\Minimal.dll
 D:\Workspace\Minimal\Minimal\obj\Debug\Minimal.pdb
 D:\Workspace\Minimal\Minimal\obj\Debug\Minimal.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\Minimal\bin\Debug\Minimal.XML
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\Minimal\bin\Debug\Minimal.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\Minimal\bin\Debug\Minimal.pdb
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\Minimal\bin\Debug\Ionic.Zip.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\Minimal\obj\Debug\Minimal.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\Minimal\obj\Debug\Minimal.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\Minimal\obj\Debug\Minimal.pdb

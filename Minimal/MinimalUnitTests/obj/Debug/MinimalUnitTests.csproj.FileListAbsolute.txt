@@ -10,3 +10,15 @@ D:\Workspace\Minimal\MinimalUnitTests\obj\Debug\MinimalUnitTests.dll
 D:\Workspace\Minimal\MinimalUnitTests\obj\Debug\MinimalUnitTests.pdb
 D:\Workspace\Minimal\MinimalUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\Workspace\Minimal\MinimalUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\MinimalUnitTests.dll.config
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\MinimalUnitTests.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\MinimalUnitTests.pdb
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\Minimal.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\Ionic.Zip.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\Minimal.pdb
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\Minimal.xml
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\obj\Debug\MinimalUnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\obj\Debug\MinimalUnitTests.dll
+C:\Users\Kevin\Source\Repos\SandBox\Minimal\MinimalUnitTests\obj\Debug\MinimalUnitTests.pdb
