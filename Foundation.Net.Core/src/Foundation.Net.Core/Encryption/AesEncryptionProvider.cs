@@ -40,14 +40,6 @@ namespace Foundation.Net.Core.Encryption
 {
     public class AesEncryptionProvider : IEncryptionProvider
     {
-        public bool IsNISTCertifiedAlgorithm
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         /// <summary>
         /// Decrypts an encrypted <code>System.byte[]</code>
         /// </summary>

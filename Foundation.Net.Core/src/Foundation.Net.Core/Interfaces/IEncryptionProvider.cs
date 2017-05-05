@@ -40,10 +40,6 @@ namespace Foundation.Net.Core.Interfaces
     public interface IEncryptionProvider
     {
         /// <summary>
-        /// Returns <c>true</c> if encryption algorithm is certified by NIST as FIPS 140-2 compliant; otherwise <c>false</c>
-        /// </summary>
-        bool IsNISTCertifiedAlgorithm { get; }
-        /// <summary>
         /// Encrypts a <code>System.String</code> using the provided passphrase to generate the Key
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
