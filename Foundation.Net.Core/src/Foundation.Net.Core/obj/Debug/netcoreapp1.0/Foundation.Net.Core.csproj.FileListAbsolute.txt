@@ -1,0 +1,12 @@
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Foundation.Net.Core.deps.json
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Foundation.Net.Core.runtimeconfig.json
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Foundation.Net.Core.runtimeconfig.dev.json
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Foundation.Net.Core.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\bin\Debug\netcoreapp1.0\Foundation.Net.Core.pdb
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.AssemblyInfo.cs
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.pdb
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.csprojResolveAssemblyReference.cache

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FB09B9EF-218A-4423-9237-CA3CF7C12B15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECF17866-225D-476F-BE62-C322B639B06D}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Foundation.Net.Core", "src\Foundation.Net.Core\Foundation.Net.Core.xproj", "{270AD6E9-BD7E-4850-8138-3892B58309CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C4B14C26-B01A-4C86-A540-0227B95BFD9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation.Net.Core.Tests", "Foundation.Net.Core.Tests\Foundation.Net.Core.Tests.csproj", "{EDDBA1CE-F415-4BB5-A2BC-6CF20DBFBA34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{270AD6E9-BD7E-4850-8138-3892B58309CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270AD6E9-BD7E-4850-8138-3892B58309CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270AD6E9-BD7E-4850-8138-3892B58309CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270AD6E9-BD7E-4850-8138-3892B58309CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDDBA1CE-F415-4BB5-A2BC-6CF20DBFBA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDDBA1CE-F415-4BB5-A2BC-6CF20DBFBA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDDBA1CE-F415-4BB5-A2BC-6CF20DBFBA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDDBA1CE-F415-4BB5-A2BC-6CF20DBFBA34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{270AD6E9-BD7E-4850-8138-3892B58309CA} = {FB09B9EF-218A-4423-9237-CA3CF7C12B15}
+		{EDDBA1CE-F415-4BB5-A2BC-6CF20DBFBA34} = {C4B14C26-B01A-4C86-A540-0227B95BFD9A}
+	EndGlobalSection
+EndGlobal

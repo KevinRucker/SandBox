@@ -1,0 +1,14 @@
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Foundation.Net.Core.Test.deps.json
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Foundation.Net.Core.Test.runtimeconfig.json
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Foundation.Net.Core.Test.runtimeconfig.dev.json
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Foundation.Net.Core.Test.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Foundation.Net.Core.Test.pdb
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Foundation.Net.Core.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\bin\Debug\netcoreapp1.1\Foundation.Net.Core.pdb
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\obj\Debug\netcoreapp1.1\Foundation.Net.Core.Test.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\obj\Debug\netcoreapp1.1\Foundation.Net.Core.Test.AssemblyInfo.cs
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\obj\Debug\netcoreapp1.1\Foundation.Net.Core.Test.dll
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\Foundation.Net.Core.Test\obj\Debug\netcoreapp1.1\Foundation.Net.Core.Test.pdb
