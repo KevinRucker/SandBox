@@ -45,10 +45,16 @@ namespace Foundation.Net.Core.Encryption
         /// <returns>Encryption digest</returns>
         public byte[] GetDigest(byte[] value, int digestLength)
         {
+            var iterations = value.AsQueryable().First(x => x != 0);
+            if(iterations == 0)
+            {
+                iterations = byte.MaxValue;
+            }
+
             var deriveBytes = new Rfc2898DeriveBytes(
                 value, 
                 SHA256.Create().ComputeHash(value), 
-                value.AsQueryable().First(x => x != 0) * 10);
+                iterations * 10);
 
             return deriveBytes.GetBytes(digestLength);
         }

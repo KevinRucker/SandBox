@@ -5,13 +5,13 @@ using Foundation.Net.Core.Encryption;
 namespace Foundation.Net.Core.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class AesCryptoTests
     {
         private string testData = "Now is the time for all good men to come to the aid of their country.";
         private string passphrase = "This is the test passphrase";
 
         [TestMethod]
-        public void TestMethod1()
+        public void EncryptDecryptString()
         {
             var crypto = new AesEncryptionProvider();
             var encrypted = crypto.EncryptString(passphrase, testData);
@@ -20,7 +20,7 @@ namespace Foundation.Net.Core.Test
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void EncryptDecryptBytes()
         {
             var crypto = new AesEncryptionProvider();
             var encrypted = crypto.EncryptBytes(passphrase, new UTF8Encoding().GetBytes(testData));
