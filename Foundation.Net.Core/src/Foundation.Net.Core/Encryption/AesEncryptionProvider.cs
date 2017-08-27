@@ -31,6 +31,7 @@
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 using Foundation.Net.Core.Interfaces;
+using Foundation.Net.Core.Utility;
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -41,7 +42,7 @@ namespace Foundation.Net.Core.Encryption
     public class AesEncryptionProvider : IEncryptionProvider
     {
         /// <summary>
-        /// Decrypts an encrypted <code>System.byte[]</code>
+        /// Decrypts an encrypted <code>System.byte[]</code> using the provided passphrase to generate the Key
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.byte[]</code> data to decrypt</param>
@@ -67,7 +68,9 @@ namespace Foundation.Net.Core.Encryption
                             using (var resultStream = new MemoryStream())
                             {
                                 csDecrypt.CopyTo(resultStream);
-                                return TrimPadding(resultStream.ToArray());
+                                return resultStream
+                                    .ToArray()
+                                    .TrimPaddingBytes(0, aes.BlockSize / 8);
                             }
                         }
                     }
@@ -133,39 +136,6 @@ namespace Foundation.Net.Core.Encryption
         public string EncryptString(string passphrase, string value)
         {
             return Convert.ToBase64String(EncryptBytes(passphrase, new UTF8Encoding().GetBytes(value)));
-        }
-
-        /// <summary>
-        /// Block encryption algorithms pad the end of the plain data if necessary to make the data
-        /// length a multiple of the algorithm's block size (16 bytes in the case of AES). The decryption
-        /// algorithm does not remove these padding bytes (0). This method removes the padding bytes if
-        /// necessary.
-        /// </summary>
-        /// <param name="data"><code>System.byte[]</code> containing decrypted value</param>
-        /// <returns>Trimmed <code>System.byte[]</code></returns>
-        private byte[] TrimPadding(byte[] data)
-        {
-            var count = 0;
-            for (var i = data.Length - 1; i > data.Length - (Aes.Create().BlockSize / 8) - 1; i--)
-            {
-                if (data[i] == 0)
-                {
-                    count++;
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-            if (count != 0)
-            {
-                var buffer = new byte[data.Length - count];
-                Buffer.BlockCopy(data, 0, buffer, 0, buffer.Length);
-                return buffer;
-            }
-
-            return data;
         }
     }
 }

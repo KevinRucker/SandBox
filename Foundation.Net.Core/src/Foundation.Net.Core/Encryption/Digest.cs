@@ -45,10 +45,14 @@ namespace Foundation.Net.Core.Encryption
         /// <returns>Encryption digest</returns>
         public byte[] GetDigest(byte[] value, int digestLength)
         {
-            var iterations = value.AsQueryable().First(x => x != 0);
-            if(iterations == 0)
+            var iterations = 0;
+            if (value.Length == 0)
             {
                 iterations = byte.MaxValue;
+            }
+            else
+            {
+                iterations = value.AsQueryable().First(x => x != 0);
             }
 
             var deriveBytes = new Rfc2898DeriveBytes(
