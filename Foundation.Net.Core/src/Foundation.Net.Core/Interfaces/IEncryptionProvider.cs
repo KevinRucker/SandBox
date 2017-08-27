@@ -44,28 +44,32 @@ namespace Foundation.Net.Core.Interfaces
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.String</code> value to encrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>base64 encoded encrypted <code>System.String</code></returns>
-        string EncryptString(string passphrase, string value);
+        string EncryptString(string passphrase, string value, int keySize);
         /// <summary>
         /// Decrypts an encrypted, base64 encoded <code>System.String</code> using the provided passphrase to generate the Key
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value">base64 encoded, encrypted <code>System.String</code> to decrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>Decrypted <code>System.String</code></returns>
-        string DecryptString(string passphrase, string value);
+        string DecryptString(string passphrase, string value, int keySize);
         /// <summary>
         /// Encrypts a <code>System.byte[]</code> using the provided passphrase to generate the Key
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.byte[]</code> data to encrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>Encrypted <code>System.byte[]</code></returns>
-        byte[] EncryptBytes(string passphrase, byte[] value);
+        byte[] EncryptBytes(string passphrase, byte[] value, int keySize);
         /// <summary>
         /// Decrypts an encrypted <code>System.byte[]</code>
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.byte[]</code> data to decrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>Decrypted <code>System.byte[]</code></returns>
-        byte[] DecryptBytes(string passphrase, byte[] value);
+        byte[] DecryptBytes(string passphrase, byte[] value, int keySize);
     }
 }

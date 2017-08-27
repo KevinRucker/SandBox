@@ -46,9 +46,15 @@ namespace Foundation.Net.Core.Encryption
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.byte[]</code> data to decrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>Decrypted <code>System.byte[]</code></returns>
-        public byte[] DecryptBytes(string passphrase, byte[] value)
+        public byte[] DecryptBytes(string passphrase, byte[] value, int keySize)
         {
+            if (!VerifyKeySize(keySize))
+            {
+                throw new ArgumentException("Invalid key size specified for Aes provider.");
+            }
+
             using (var aes = Aes.Create())
             {
                 // Extract IV and data from value
@@ -57,7 +63,7 @@ namespace Foundation.Net.Core.Encryption
                 var data = (byte[])Array.CreateInstance(typeof(byte), value.Length - iv.Length);
                 Buffer.BlockCopy(value, iv.Length, data, 0, data.Length);
                 // Derive Key from passphrase
-                aes.Key = new Digest().GetDigest(new UTF8Encoding().GetBytes(passphrase), 32);
+                aes.Key = new Digest().GetDigest(new UTF8Encoding().GetBytes(passphrase), keySize / 8);
                 // Decrypt
                 using (var decryptor = aes.CreateDecryptor(aes.Key, iv))
                 {
@@ -83,10 +89,11 @@ namespace Foundation.Net.Core.Encryption
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.String</code> value to decrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>>Decrypted <code>System.byte[]</code></returns>
-        public string DecryptString(string passphrase, string value)
+        public string DecryptString(string passphrase, string value, int keySize)
         {
-            return new UTF8Encoding().GetString(DecryptBytes(passphrase, Convert.FromBase64String(value)));
+            return new UTF8Encoding().GetString(DecryptBytes(passphrase, Convert.FromBase64String(value), keySize));
         }
 
         /// <summary>
@@ -94,15 +101,21 @@ namespace Foundation.Net.Core.Encryption
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.byte[]</code> data to encrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>Encrypted <code>System.byte[]</code></returns>
-        public byte[] EncryptBytes(string passphrase, byte[] value)
+        public byte[] EncryptBytes(string passphrase, byte[] value, int keySize)
         {
+            if (!VerifyKeySize(keySize))
+            {
+                throw new ArgumentException("Invalid key size specified for Aes provider.");
+            }
+
             using (var aes = Aes.Create())
             {
                 // Generate IV
                 aes.GenerateIV();
                 // Derive Key from passphrase
-                aes.Key = new Digest().GetDigest(new UTF8Encoding().GetBytes(passphrase), 32);
+                aes.Key = new Digest().GetDigest(new UTF8Encoding().GetBytes(passphrase), keySize / 8);
                 // Encrypt
                 using (var encryptor = aes.CreateEncryptor(aes.Key, aes.IV))
                 {
@@ -132,10 +145,26 @@ namespace Foundation.Net.Core.Encryption
         /// </summary>
         /// <param name="passphrase"><code>System.String</code> passphrase to use</param>
         /// <param name="value"><code>System.String</code> value to encrypt</param>
+        /// <param name="keySize">Key size to use</param>
         /// <returns>base64 encoded encrypted <code>System.String</code></returns>
-        public string EncryptString(string passphrase, string value)
+        public string EncryptString(string passphrase, string value, int keySize)
         {
-            return Convert.ToBase64String(EncryptBytes(passphrase, new UTF8Encoding().GetBytes(value)));
+            return Convert.ToBase64String(EncryptBytes(passphrase, new UTF8Encoding().GetBytes(value), keySize));
+        }
+
+        private bool VerifyKeySize(int size)
+        {
+            using (var aes = Aes.Create())
+            {
+                // Generate key size list
+                var sizeList = new System.Collections.Generic.List<int>();
+                for(var i = aes.LegalKeySizes[0].MinSize; i <= aes.LegalKeySizes[0].MaxSize; i += aes.LegalKeySizes[0].SkipSize)
+                {
+                    sizeList.Add(i);
+                }
+
+                return sizeList.Contains(size);
+            }
         }
     }
 }
