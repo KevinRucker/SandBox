@@ -20,12 +20,30 @@ namespace Foundation.Net.Core.Test
         }
 
         [TestMethod]
+        public void EncryptDecryptStringFail()
+        {
+            var crypto = new AesEncryptionProvider();
+            var encrypted = crypto.EncryptString(passphrase, testData);
+            Assert.ThrowsException<System.Security.Cryptography.CryptographicException>(
+                () => crypto.DecryptString("Different passphrase", encrypted));
+        }
+
+        [TestMethod]
         public void EncryptDecryptBytes()
         {
             var crypto = new AesEncryptionProvider();
             var encrypted = crypto.EncryptBytes(passphrase, new UTF8Encoding().GetBytes(testData));
             var decrypted = new UTF8Encoding().GetString(crypto.DecryptBytes(passphrase, encrypted));
             Assert.AreEqual(testData, decrypted);
+        }
+
+        [TestMethod]
+        public void EncryptDecryptBytesFail()
+        {
+            var crypto = new AesEncryptionProvider();
+            var encrypted = crypto.EncryptBytes(passphrase, new UTF8Encoding().GetBytes(testData));
+            Assert.ThrowsException<System.Security.Cryptography.CryptographicException>(
+                () => new UTF8Encoding().GetString(crypto.DecryptBytes("Different passphrase", encrypted)));
         }
     }
 }
