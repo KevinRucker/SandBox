@@ -1,11 +1,11 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v1.0",
+    "name": ".NETCoreApp,Version=v2.0",
     "signature": "59493a96f2ef451a09bb15bb713470c6b8f2770b"
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v1.0": {
+    ".NETCoreApp,Version=v2.0": {
       "Foundation.Net.Core/1.0.0": {
         "dependencies": {
           "MSTest.TestAdapter": "1.1.17",
@@ -1486,12 +1486,7 @@
       },
       "System.Text.RegularExpressions/4.3.0": {
         "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0"
+          "System.Runtime": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.6/System.Text.RegularExpressions.dll": {}

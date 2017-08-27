@@ -53,7 +53,7 @@ namespace Foundation.Net.Core.Encryption
 
             var deriveBytes = new Rfc2898DeriveBytes(
                 value, 
-                SHA256.Create().ComputeHash(value), 
+                SHA512.Create().ComputeHash(value), 
                 iterations * 10);
 
             return deriveBytes.GetBytes(digestLength);

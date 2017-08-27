@@ -111,7 +111,7 @@ namespace Foundation.Net.Core.Encryption
                             {
                                 plainStream.CopyTo(aesStream);
                                 aesStream.FlushFinalBlock();
-                                // Append IV to encrypted data
+                                // Prepend IV to encrypted data
                                 var encrypted = resultStream.ToArray();
                                 var buffer = (byte[])Array.CreateInstance(typeof(byte), aes.IV.Length + encrypted.Length);
                                 Buffer.BlockCopy(aes.IV, 0, buffer, 0, aes.IV.Length);

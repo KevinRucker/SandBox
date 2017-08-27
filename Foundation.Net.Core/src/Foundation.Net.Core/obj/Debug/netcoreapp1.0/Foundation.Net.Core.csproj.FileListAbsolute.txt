@@ -10,3 +10,5 @@ C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\
 C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.dll
 C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.pdb
 C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.csproj.CoreCompileInputs.cache
+C:\Users\Kevin\Source\Repos\SandBox\Foundation.Net.Core\src\Foundation.Net.Core\obj\Debug\netcoreapp1.0\Foundation.Net.Core.AssemblyInfoInputs.cache

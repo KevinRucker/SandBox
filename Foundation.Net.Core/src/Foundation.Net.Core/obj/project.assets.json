@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v1.0": {
+    ".NETCoreApp,Version=v2.0": {
       "Libuv/1.9.1": {
         "type": "package",
         "dependencies": {
@@ -1091,9 +1091,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Collections.Concurrent/4.3.0": {
@@ -1282,9 +1279,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/4.3.0": {
@@ -1416,9 +1410,6 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Diagnostics.TraceSource/4.3.0": {
@@ -1457,9 +1448,6 @@
         },
         "compile": {
           "ref/netstandard1.5/System.Diagnostics.Tracing.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
         }
       },
       "System.Dynamic.Runtime/4.3.0": {
@@ -1496,9 +1484,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Globalization.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Globalization.Calendars/4.3.0": {
@@ -1548,9 +1533,6 @@
         },
         "compile": {
           "ref/netstandard1.5/System.IO.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.IO.Compression/4.3.0": {
@@ -1574,9 +1556,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.IO.Compression.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.IO.Compression.dll": {
@@ -1841,9 +1820,6 @@
         "compile": {
           "ref/netstandard1.3/System.Net.Http.dll": {}
         },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
-        },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
             "assetType": "runtime",
@@ -1897,9 +1873,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Net.Primitives.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Net.Requests/4.0.11": {
@@ -1921,9 +1894,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Net.Requests.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll": {
@@ -2088,9 +2058,6 @@
         },
         "compile": {
           "ref/netstandard1.5/System.Reflection.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Reflection.DispatchProxy/4.0.1": {
@@ -2169,9 +2136,6 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Reflection.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Reflection.Metadata/1.3.0": {
@@ -2209,9 +2173,6 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Reflection.Primitives.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Reflection.TypeExtensions/4.3.0": {
@@ -2254,9 +2215,6 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Resources.ResourceManager.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Runtime/4.3.0": {
@@ -2267,9 +2225,6 @@
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp80+wpa81/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.3.0": {
@@ -2293,9 +2248,6 @@
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Runtime.Handles/4.3.0": {
@@ -2320,10 +2272,7 @@
           "System.Runtime.Handles": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Runtime.InteropServices.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
+          "ref/netcoreapp1.1/System.Runtime.InteropServices.dll": {}
         }
       },
       "System.Runtime.InteropServices.RuntimeInformation/4.3.0": {
@@ -2698,9 +2647,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Text.Encoding.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Text.Encoding.CodePages/4.0.1": {
@@ -2743,23 +2689,15 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Text.Encoding.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Text.RegularExpressions/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0"
+          "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.6/System.Text.RegularExpressions.dll": {}
+          "ref/netcoreapp1.1/System.Text.RegularExpressions.dll": {}
         },
         "runtime": {
           "lib/netstandard1.6/System.Text.RegularExpressions.dll": {}
@@ -2809,9 +2747,6 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
       "System.Threading.Tasks.Dataflow/4.6.0": {
@@ -8892,7 +8827,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v1.0": [
+    ".NETCoreApp,Version=v2.0": [
       "MSTest.TestAdapter >= 1.1.17",
       "MSTest.TestFramework >= 1.1.17",
       "Microsoft.Extensions.Configuration >= 1.1.1",
@@ -8908,27 +8843,48 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kevin\\.nuget\\packages\\": {}
+    "C:\\Users\\Kevin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "C:\\Users\\Kevin\\Source\\Repos\\SandBox\\Foundation.Net.Core\\src\\Foundation.Net.Core\\Foundation.Net.Core.csproj",
       "projectName": "Foundation.Net.Core",
       "projectPath": "C:\\Users\\Kevin\\Source\\Repos\\SandBox\\Foundation.Net.Core\\src\\Foundation.Net.Core\\Foundation.Net.Core.csproj",
+      "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kevin\\Source\\Repos\\SandBox\\Foundation.Net.Core\\src\\Foundation.Net.Core\\obj\\",
       "projectStyle": "PackageReference",
-      "originalTargetFrameworks": [
-        "netcoreapp1.0"
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
+      "configFilePaths": [
+        "C:\\Users\\Kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp2.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
-        "netcoreapp1.0": {
+        "netcoreapp2.0": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {
-      "netcoreapp1.0": {
+      "netcoreapp2.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.EnvironmentVariables": {
             "target": "Package",
@@ -8981,9 +8937,10 @@
           }
         },
         "imports": [
-          "dnxcore50",
-          "portable-net45+win8"
-        ]
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
       }
     }
   }
