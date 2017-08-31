@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace Foundation.Net.Core.Utility
 {
@@ -39,6 +40,23 @@ namespace Foundation.Net.Core.Utility
 
             // No padding detected return origin data
             return origin;
+        }
+
+        /// <summary>
+        /// Verifies whether the supplied key size is valid for the algorithm.
+        /// </summary>
+        /// <param name="keySize">Key size to verify</param>
+        /// <returns><code>bool</code></returns>
+        public static bool VerifySymmetricKeySize(this SymmetricAlgorithm alg, int keySize)
+        {
+            // Generate key size list
+            var sizeList = new System.Collections.Generic.List<int>();
+            for (var i = alg.LegalKeySizes[0].MinSize; i <= alg.LegalKeySizes[0].MaxSize; i += alg.LegalKeySizes[0].SkipSize)
+            {
+                sizeList.Add(i);
+            }
+
+            return sizeList.Contains(keySize);
         }
     }
 }

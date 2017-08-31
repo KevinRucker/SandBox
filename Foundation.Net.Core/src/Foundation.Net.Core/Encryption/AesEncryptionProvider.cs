@@ -50,13 +50,13 @@ namespace Foundation.Net.Core.Encryption
         /// <returns>Decrypted <code>System.byte[]</code></returns>
         public byte[] DecryptBytes(string passphrase, byte[] value, int keySize)
         {
-            if (!VerifyKeySize(keySize))
-            {
-                throw new ArgumentException("Invalid key size specified for Aes provider.");
-            }
-
             using (var aes = Aes.Create())
             {
+                if (!aes.VerifySymmetricKeySize(keySize))
+                {
+                    throw new ArgumentException("Invalid key size specified for Aes provider.");
+                }
+
                 // Extract IV and data from value
                 var iv = (byte[])Array.CreateInstance(typeof(byte), aes.IV.Length);
                 Buffer.BlockCopy(value, 0, iv, 0, iv.Length);
@@ -105,13 +105,13 @@ namespace Foundation.Net.Core.Encryption
         /// <returns>Encrypted <code>System.byte[]</code></returns>
         public byte[] EncryptBytes(string passphrase, byte[] value, int keySize)
         {
-            if (!VerifyKeySize(keySize))
-            {
-                throw new ArgumentException("Invalid key size specified for Aes provider.");
-            }
-
             using (var aes = Aes.Create())
             {
+                if (!aes.VerifySymmetricKeySize(keySize))
+                {
+                    throw new ArgumentException("Invalid key size specified for Aes provider.");
+                }
+
                 // Generate IV
                 aes.GenerateIV();
                 // Derive Key from passphrase
@@ -150,21 +150,6 @@ namespace Foundation.Net.Core.Encryption
         public string EncryptString(string passphrase, string value, int keySize)
         {
             return Convert.ToBase64String(EncryptBytes(passphrase, new UTF8Encoding().GetBytes(value), keySize));
-        }
-
-        private bool VerifyKeySize(int size)
-        {
-            using (var aes = Aes.Create())
-            {
-                // Generate key size list
-                var sizeList = new System.Collections.Generic.List<int>();
-                for(var i = aes.LegalKeySizes[0].MinSize; i <= aes.LegalKeySizes[0].MaxSize; i += aes.LegalKeySizes[0].SkipSize)
-                {
-                    sizeList.Add(i);
-                }
-
-                return sizeList.Contains(size);
-            }
         }
     }
 }

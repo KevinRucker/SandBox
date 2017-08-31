@@ -9,7 +9,7 @@ namespace Foundation.Net.Core.Test
     {
         private string testData = "Now is the time for all good men to come to the aid of their country.";
         private string passphrase = "This is the test passphrase";
-        private int keySize = 256;
+        private int keySize = 256; // Legal values for Aes are 128, 192, and 256
 
         [TestMethod]
         public void EncryptDecryptString()
